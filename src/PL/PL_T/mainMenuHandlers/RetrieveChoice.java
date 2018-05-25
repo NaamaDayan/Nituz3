@@ -1,7 +1,7 @@
 package PL.PL_T.mainMenuHandlers;
 
-import PL.PL_T.Functor;
-import PL.PL_T.Main;
+import PL.Functor;
+import PL.MainMenus.TransportsMainMenu;
 
 import java.text.ParseException;
 import java.util.Scanner;
@@ -24,7 +24,7 @@ public class RetrieveChoice extends Functor {
         Functor retrieveFuncs[] = fillRetrieveFunctions();
         System.out.println("Enter:\n 1 to retrieve Truck\n 2 to retrieve driver\n 3 to retrieve license\n 4 to retrieve delivery \n 5 to retrieve place\n 6 to retrieve license of driver \n 7 to retrieve truck model\n 8 for main menu");
         int retrieveChoice = reader.nextInt();
-        retrieveChoice = Main.rangeCheck(1, 8, retrieveChoice);
+        retrieveChoice = TransportsMainMenu.rangeCheck(1, 8, retrieveChoice);
         if (retrieveChoice == 8)
             return;
         retrieveFuncs[retrieveChoice-1].execute();

@@ -4,11 +4,12 @@ import BL.BL_W.RolesLogic;
 import BL.BL_W.WorkerLogic;
 import BL.BL_W.Entities_W.Role;
 import BL.BL_W.Entities_W.Worker;
+import PL.PL_W.Command;
 
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class RemoveRoleFromWorker implements utils_W.Command {
+public class RemoveRoleFromWorker implements Command {
     static Scanner reader = new Scanner(System.in);
 
     @Override

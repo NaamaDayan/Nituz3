@@ -4,7 +4,7 @@ import BL.BL_T.Entities.LicenseTypeForTruck;
 import BL.BL_T.Entities.TruckModel;
 import BL.BL_T.EntitiyFunctions.LicenseTypeForTruckFunctions;
 import BL.BL_T.EntitiyFunctions.ModelFunctions;
-import PL.PL_T.Functor;
+import PL.Functor;
 import PL.PL_T.Utils;
 
 import java.util.Scanner;

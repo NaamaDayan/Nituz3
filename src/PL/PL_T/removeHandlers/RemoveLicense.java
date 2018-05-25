@@ -1,6 +1,6 @@
 package PL.PL_T.removeHandlers;
 import BL.BL_T.EntitiyFunctions.LicenseTypeForTruckFunctions;
-import PL.PL_T.Functor;
+import PL.Functor;
 
 import java.util.Scanner;
 

@@ -5,7 +5,7 @@ import BL.BL_T.Entities.*;
 import BL.BL_T.EntitiyFunctions.*;
 import BL.BL_W.Entities_W.Worker;
 import BL.BL_W.WorkerLogic;
-import PL.PL_T.Functor;
+import PL.Functor;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

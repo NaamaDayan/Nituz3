@@ -1,7 +1,7 @@
 package PL.PL_W.removeCommand;
 
 import PL.PL_W.utilCommands.mainMenuCommand;
-import utils_W.Command;
+import PL.PL_W.Command;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;

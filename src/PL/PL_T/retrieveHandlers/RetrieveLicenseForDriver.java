@@ -3,7 +3,7 @@ package PL.PL_T.retrieveHandlers;
 import BL.BL_T.Entities.LicenseTypeForTruck;
 import BL.BL_T.EntitiyFunctions.DriverFunctions;
 import BL.BL_T.EntitiyFunctions.DriverLicenseFunctions;
-import PL.PL_T.Functor;
+import PL.Functor;
 
 import java.util.List;
 import java.util.Scanner;

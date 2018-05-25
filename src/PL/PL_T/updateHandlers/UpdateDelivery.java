@@ -4,7 +4,7 @@ import BL.BL_T.Entities.Delivery;
 import BL.BL_T.Entities.Driver;
 import BL.BL_T.Entities.Truck;
 import BL.BL_T.EntitiyFunctions.*;
-import PL.PL_T.Functor;
+import PL.Functor;
 import PL.PL_T.Utils;
 import PL.PL_T.insertHandlers.InsertDeliveryDestination;
 
