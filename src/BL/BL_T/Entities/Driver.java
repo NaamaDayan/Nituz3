@@ -2,7 +2,7 @@ package BL.BL_T.Entities;
 
 import java.util.List;
 
-public class Driver{
+/*public class Driver{
 
     private String id;
     private String firstName;
@@ -67,4 +67,4 @@ public class Driver{
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-}
+}*/

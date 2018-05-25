@@ -1,9 +1,10 @@
 package PL.PL_T.insertHandlers;
 
 import BL.BL_T.Entities.LicenseTypeForTruck;
-import BL.BL_T.EntitiyFunctions.DriverFunctions;
 import BL.BL_T.EntitiyFunctions.DriverLicenseFunctions;
 import BL.BL_T.EntitiyFunctions.LicenseTypeForTruckFunctions;
+import BL.BL_W.Entities_W.Worker;
+import BL.BL_W.WorkerLogic;
 import PL.PL_T.Functor;
 
 import java.util.Scanner;
@@ -19,8 +20,9 @@ public class InsertLicenseForDriver extends Functor {
     public void execute() {
         System.out.println("enter driver id");
         String driverId = reader.next();
+        Worker driver = WorkerLogic.getWorker(driverId);
         try {
-            if (!DriverFunctions.isExist(driverId)){
+            if (driver == null){
                 System.out.println("driver does not exist");
                 return;
             }

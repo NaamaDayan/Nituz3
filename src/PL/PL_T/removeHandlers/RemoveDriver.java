@@ -1,12 +1,10 @@
 package PL.PL_T.removeHandlers;
-import BL.BL_T.EntitiyFunctions.DriverFunctions;
+/*import BL.BL_T.EntitiyFunctions.DriverFunctions;
 import PL.PL_T.Functor;
 
 import java.util.Scanner;
 
-/**
- * Created by Shahar on 22/04/2018.
- */
+
 public class RemoveDriver extends Functor {
 
     static Scanner reader = new Scanner(System.in);
@@ -26,4 +24,4 @@ public class RemoveDriver extends Functor {
             return;
         }
     }
-}
+}*/

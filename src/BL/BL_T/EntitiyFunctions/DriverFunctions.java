@@ -1,14 +1,11 @@
 package BL.BL_T.EntitiyFunctions;
 
-import BL.BL_T.Entities.Driver;
-import DAL.DAL_T.Drivers;
+/*import DAL.DAL_T.Drivers;
 import DAL.DAL_T.ErrorsHandler;
 
 import java.sql.SQLException;
 
-/**
- * Created by Naama on 21/04/2018.
- */
+
 public class DriverFunctions {
 
     public static void insertDriver(Driver driver) {
@@ -22,10 +19,7 @@ public class DriverFunctions {
     public static void removeDriver(String id) throws SQLException, ClassNotFoundException {
      //   Driver d = Drivers.retrieveDriver(id);
         Drivers.removeDriver(id);
-        /*List<LicenseTypeForTruck> licenseList = DriversLicenses.retrieveDriverLicenses(id); //list of id's of licenses of driver
-        for (LicenseTypeForTruck license: licenseList) {
-            DriversLicenses.removeDriverLicense(id, license.getLicenseType());
-        }*/
+
     }
 
     public static void updateDriver(Driver d) throws SQLException, ClassNotFoundException {
@@ -35,4 +29,4 @@ public class DriverFunctions {
     public static boolean isExist(String id) throws Exception {
         return ErrorsHandler.isDriverExist(id);
     }
-}
+}*/
