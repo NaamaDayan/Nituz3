@@ -1,0 +1,1323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cfa05cce-5899-403d-b69c-f3a6dd21c822" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-T/Entities/DeliveryDestination.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-T/Entities/Driver.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-T/Entities/LicenseTypeForTruck.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-T/Entities/Order.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-T/Entities/Place.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-T/Entities/Truck.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-T/Entities/TruckModel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-T/EntitiyFunctions/DeliveryDestinationFunctions.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-T/EntitiyFunctions/DeliveryFunctions.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-T/EntitiyFunctions/DriverFunctions.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-T/EntitiyFunctions/DriverLicenseFunctions.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-T/EntitiyFunctions/LicenseTypeForTruckFunctions.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-T/EntitiyFunctions/ModelFunctions.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-T/EntitiyFunctions/OrderFunctions.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-T/EntitiyFunctions/PlaceFunctions.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-T/EntitiyFunctions/TruckFunctions.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-W/Entities/BankAccount.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-W/Entities/BankAccount.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-W/Entities/Role.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-W/Entities/Role.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-W/Entities/Shift$ShiftDayPart.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-W/Entities/Shift.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-W/Entities/Shift.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-W/Entities/Worker.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-W/Entities/Worker.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-W/RolesLogic.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-W/RolesLogic.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-W/ShiftLogic.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-W/ShiftLogic.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-W/WorkerLogic.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/BL/BL-W/WorkerLogic.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/DAL/DAL-T/Deliveries.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/DAL/DAL-T/DeliveryDestinations.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/DAL/DAL-T/Drivers.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/DAL/DAL-T/DriversLicenses.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/DAL/DAL-T/ErrorsHandler.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/DAL/DAL-T/LicenseForTruck.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/DAL/DAL-T/Models.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/DAL/DAL-T/Orders.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/DAL/DAL-T/Places.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/DAL/DAL-T/Trucks.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/DAL/DAL-T/Utils.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/DAL/DAL-W/WorkersDatabase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/DAL/DAL-W/WorkersDatabase.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/DAL/Tables.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/Functor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/Main.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/Utils.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/insertHandlers/InsertDelivery.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/insertHandlers/InsertDeliveryDestination.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/insertHandlers/InsertDriver.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/insertHandlers/InsertLicense.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/insertHandlers/InsertLicenseForDriver.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/insertHandlers/InsertModel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/insertHandlers/InsertPlace.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/insertHandlers/InsertTruck.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/mainMenuHandlers/InsertChoice.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/mainMenuHandlers/RemoveChoice.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/mainMenuHandlers/RetrieveChoice.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/mainMenuHandlers/Stam.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/mainMenuHandlers/UpdateChoice.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/removeHandlers/RemoveDelivery.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/removeHandlers/RemoveDeliveryDestination.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/removeHandlers/RemoveDriver.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/removeHandlers/RemoveLicense.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/removeHandlers/RemoveLicenseOfDriver.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/removeHandlers/RemoveModel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/removeHandlers/RemovePlace.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/removeHandlers/RemoveTruck.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/retrieveHandlers/RetrieveDelivery.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/retrieveHandlers/RetrieveDriver.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/retrieveHandlers/RetrieveLicense.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/retrieveHandlers/RetrieveLicenseForDriver.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/retrieveHandlers/RetrieveModel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/retrieveHandlers/RetrievePlace.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/retrieveHandlers/RetrieveTruck.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/updateHandlers/UpdateDelivery.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/updateHandlers/UpdateDriver.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/updateHandlers/UpdateLicense.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/updateHandlers/UpdateModel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/updateHandlers/UpdatePlace.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-T/updateHandlers/UpdateTruck.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/WorkersMain.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/WorkersMain.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/insertCommand/CreateShift.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/insertCommand/CreateShift.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/insertCommand/InsertCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/insertCommand/InsertCommand.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/insertCommand/InsertRole.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/insertCommand/InsertRole.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/insertCommand/InsertRoleForWorker.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/insertCommand/InsertRoleForWorker.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/insertCommand/InsertWorker.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/insertCommand/InsertWorker.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/insertCommand/InsertWorkersAvailableShifts.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/insertCommand/InsertWorkersAvailableShifts.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/insertCommand/ScheduleWorker.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/insertCommand/ScheduleWorker.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/removeCommand/RemoveActualShift.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/removeCommand/RemoveActualShift.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/removeCommand/RemoveAvailableShift.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/removeCommand/RemoveAvailableShift.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/removeCommand/RemoveCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/removeCommand/RemoveCommand.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/removeCommand/RemoveRoleFromWorker.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/removeCommand/RemoveRoleFromWorker.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/removeCommand/RemoveShift.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/removeCommand/RemoveShift.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/selectCommand/SelectAssignedWorkers.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/selectCommand/SelectAssignedWorkers.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/selectCommand/SelectAvailableWorkers.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/selectCommand/SelectAvailableWorkers.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/selectCommand/SelectCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/selectCommand/SelectCommand.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/selectCommand/SelectShift.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/selectCommand/SelectShift.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/selectCommand/SelectWorker.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/selectCommand/SelectWorker.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/updateCommand/UpdateBankAccount.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/updateCommand/UpdateBankAccount.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/updateCommand/UpdateCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/updateCommand/UpdateCommand.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/updateCommand/UpdateWorker.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/updateCommand/UpdateWorker.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/utilCommands/ExitCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/utilCommands/ExitCommand.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/utilCommands/mainMenuCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/utilCommands/mainMenuCommand.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/utils/Command.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/utils/Command.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/utils/Utils.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ass3/PL/PL-W/utils/Utils.java" afterPath="" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+      <file leaf-file-name="Deliveries.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DAL/DAL_T/Deliveries.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1860">
+              <caret line="69" column="17" lean-forward="false" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
+              <folding>
+                <marker date="1527252972214" expanded="true" signature="443:486" ph="INSERT INTO Deliveries... " />
+                <marker date="1527252972214" expanded="true" signature="1144:1179" ph="DELETE FROM " />
+                <marker date="1527252972214" expanded="true" signature="1506:1618" ph="UPDATE Deliv... " />
+                <marker date="1527252972214" expanded="true" signature="2169:2208" ph="SELECT * FRO... Deliveries" />
+                <marker date="1527252972214" expanded="true" signature="3437:3624" ph="SELECT * FRO... LicensesForDrivers" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tables.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DAL/Tables.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1620">
+              <caret line="54" column="34" lean-forward="false" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1527252972282" expanded="true" signature="1636:1774" ph="CREATE TABLE... Models" />
+                <marker date="1527252972282" expanded="true" signature="2043:2433" ph="CREATE TABLE... Trucks" />
+                <marker date="1527252972282" expanded="true" signature="2706:2962" ph="CREATE TABLE... Licenses" />
+                <marker date="1527252972282" expanded="true" signature="3244:3660" ph="CREATE TABLE... LicensesForDrivers" />
+                <marker date="1527252972282" expanded="true" signature="3930:4225" ph="CREATE TABLE... Places" />
+                <marker date="1527252972282" expanded="true" signature="4542:5187" ph="CREATE TABLE... Deliveries" />
+                <marker date="1527252972282" expanded="true" signature="5472:5994" ph="CREATE TABLE... DeliveryDestinations" />
+                <marker date="1527252972282" expanded="true" signature="6276:6603" ph="CREATE TABLE... Workers" />
+                <marker date="1527252972282" expanded="true" signature="6856:7255" ph="CREATE TABLE... Shifts" />
+                <marker date="1527252972282" expanded="true" signature="7506:7720" ph="CREATE TABLE... Roles" />
+                <marker date="1527252972282" expanded="true" signature="8010:8340" ph="CREATE TABLE... BankAccounts" />
+                <marker date="1527252972282" expanded="true" signature="8599:8968" ph="CREATE TABLE... WorkersRoles" />
+                <marker date="1527252972282" expanded="true" signature="9230:9898" ph="CREATE TABLE... WorkersAvailableShifts" />
+                <marker date="1527252972282" expanded="true" signature="10158:10907" ph="CREATE TABLE... WorkersShifts" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WorkersDatabase.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/DAL/DAL_W/WorkersDatabase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+              <folding>
+                <marker date="1527252972265" expanded="true" signature="969:1231" ph="CREATE TABLE... Workers" />
+                <marker date="1527252972265" expanded="true" signature="1484:1683" ph="CREATE TABLE... Shifts" />
+                <marker date="1527252972265" expanded="true" signature="1934:2089" ph="CREATE TABLE... Roles" />
+                <marker date="1527252972265" expanded="true" signature="2347:2677" ph="CREATE TABLE... BankAccounts" />
+                <marker date="1527252972265" expanded="true" signature="2936:3305" ph="CREATE TABLE... WorkersRoles" />
+                <marker date="1527252972265" expanded="true" signature="3567:4054" ph="CREATE TABLE... WorkersAvailableShifts" />
+                <marker date="1527252972265" expanded="true" signature="4314:4882" ph="CREATE TABLE... WorkersShifts" />
+                <marker date="1527252972265" expanded="true" signature="5637:5738" ph="Insert INTO Workers... " />
+                <marker date="1527252972265" expanded="true" signature="5767:5888" ph="Insert INTO BankAccounts... " />
+                <marker date="1527252972265" expanded="true" signature="6946:7150" ph="SELECT W.FNa... Workers" />
+                <marker date="1527252972265" expanded="true" signature="8182:8307" ph="SELECT R.Rol... Roles" />
+                <marker date="1527252972265" expanded="true" signature="9149:9254" ph="UPDATE BankA... " />
+                <marker date="1527252972265" expanded="true" signature="9901:10012" ph="Insert INTO WorkersAvailableShifts... " />
+                <marker date="1527252972265" expanded="true" signature="10518:10582" ph="Update Worke... " />
+                <marker date="1527252972265" expanded="true" signature="11161:11267" ph="DELETE FROM " />
+                <marker date="1527252972265" expanded="true" signature="11795:11872" ph="DELETE FROM " />
+                <marker date="1527252972265" expanded="true" signature="12399:12451" ph="DELETE FROM " />
+                <marker date="1527252972265" expanded="true" signature="13026:13083" ph="Insert Into WorkersRoles... " />
+                <marker date="1527252972265" expanded="true" signature="13517:13558" ph="SELECT RoleI... Roles" />
+                <marker date="1527252972265" expanded="true" signature="14122:14457" ph="SELECT W.ID,... Workers" />
+                <marker date="1527252972265" expanded="true" signature="15606:15826" ph="SELECT W.ID,... Workers" />
+                <marker date="1527252972265" expanded="true" signature="17071:17130" ph="INSERT INTO Shifts... " />
+                <marker date="1527252972265" expanded="true" signature="17629:17664" ph="Select RoleI... Roles" />
+                <marker date="1527252972265" expanded="true" signature="18185:18224" ph="INSERT INTO Roles... " />
+                <marker date="1527252972265" expanded="true" signature="18636:18674" ph="Select * fro... Roles" />
+                <marker date="1527252972265" expanded="true" signature="19203:19246" ph="Select Shift... Shifts" />
+                <marker date="1527252972265" expanded="true" signature="19780:19837" ph="Select * Fro... Shifts" />
+                <marker date="1527252972265" expanded="true" signature="20357:20449" ph="INSERT INTO WorkersShifts... " />
+                <marker date="1527252972265" expanded="true" signature="21024:21111" ph="SELECT * FRO... WorkersAvailableShifts" />
+                <marker date="1527252972265" expanded="true" signature="21677:21756" ph="SELECT * FRO... WorkersShifts" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DriversLicenses.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DAL/DAL_T/DriversLicenses.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1800">
+              <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+              <folding>
+                <marker date="1527252972241" expanded="true" signature="425:469" ph="INSERT INTO LicensesForDrivers... " />
+                <marker date="1527252972241" expanded="true" signature="978:1049" ph="DELETE FROM " />
+                <marker date="1527252972241" expanded="true" signature="1615:1669" ph="SELECT * FRO... LicensesForDrivers" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>worker</find>
+      <find>places</find>
+      <find>get</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/PL/Main.java" />
+        <option value="$PROJECT_DIR$/src/PL_T/Main.java" />
+        <option value="$PROJECT_DIR$/src/BL/WorkerLogic.java" />
+        <option value="$PROJECT_DIR$/src/utils/Utils.java" />
+        <option value="$PROJECT_DIR$/src/utils_W/Utils.java" />
+        <option value="$PROJECT_DIR$/src/PL/PL_T/Main.java" />
+        <option value="$PROJECT_DIR$/src/DAL/DAL_T/CreateTables.java" />
+        <option value="$PROJECT_DIR$/src/DAL/DAL_T/Drivers.java" />
+        <option value="$PROJECT_DIR$/src/DAL/DAL_T/Utils.java" />
+        <option value="$PROJECT_DIR$/src/DAL/DAL_T/Deliveries.java" />
+        <option value="$PROJECT_DIR$/src/DAL/DAL_T/DeliveryDestinations.java" />
+        <option value="$PROJECT_DIR$/src/DAL/DAL_T/DriversLicenses.java" />
+        <option value="$PROJECT_DIR$/src/DAL/DAL_T/ErrorsHandler.java" />
+        <option value="$PROJECT_DIR$/src/DAL/DAL_T/LicenseForTruck.java" />
+        <option value="$PROJECT_DIR$/src/DAL/DAL_T/Models.java" />
+        <option value="$PROJECT_DIR$/src/DAL/DAL_T/Orders.java" />
+        <option value="$PROJECT_DIR$/src/DAL/DAL_T/Places.java" />
+        <option value="$PROJECT_DIR$/src/DAL/DAL_T/Trucks.java" />
+        <option value="$PROJECT_DIR$/src/BL/BL_T/Entities/Delivery.java" />
+        <option value="$PROJECT_DIR$/src/PL/PL_T/insertHandlers/InsertDelivery.java" />
+        <option value="$PROJECT_DIR$/src/BL/BL_T/EntitiyFunctions/DeliveryFunctions.java" />
+        <option value="$PROJECT_DIR$/src/DAL/Tables.java" />
+        <option value="$PROJECT_DIR$/src/DAL/DAL_W/WorkersDatabase.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-11" />
+    <option name="y" value="-11" />
+    <option name="width" value="1942" />
+    <option name="height" value="1042" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Nituz3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Nituz3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Nituz3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Nituz3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Nituz3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Nituz3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DAL" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Nituz3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Nituz3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DAL" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DAL_W" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Nituz3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Nituz3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BL" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/PL_T" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Naama\Desktop\סמסטר ד\Ass3\src\DAL" />
+      <recent name="C:\Users\Naama\Desktop\סמסטר ד\Ass3\src\utils" />
+      <recent name="C:\Users\Naama\Desktop\סמסטר ד\Ass3\src\PL" />
+      <recent name="C:\Users\Naama\Desktop\סמסטר ד\Ass3\src" />
+      <recent name="C:\Users\Naama\Desktop\סמסטר ד\Ass3\src\Entities" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Unnamed">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" custom_browser="" web_path="">
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="passParentEnv" value="true" />
+      <setting name="launchBrowser" value="true" />
+      <setting name="launchBrowserUrl" value="" />
+      <setting name="depsClasspath" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Ass3" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
+      <method />
+    </configuration>
+    <configuration default="false" name="Unnamed" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="PL.PL_T.Main" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Ass3" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Application.Unnamed" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cfa05cce-5899-403d-b69c-f3a6dd21c822" name="Default" comment="" />
+      <created>1527229242791</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1527229242791</updated>
+      <workItem from="1527229244482" duration="1916000" />
+      <workItem from="1527250470656" duration="2238000" />
+      <workItem from="1527252849591" duration="246000" />
+      <workItem from="1527253116167" duration="9000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="4409000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938388" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26324326" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32938388" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09241706" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/DAL/DAL_T/Deliveries.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1860">
+          <caret line="69" column="17" lean-forward="false" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
+          <folding>
+            <marker date="1527252972214" expanded="true" signature="443:486" ph="INSERT INTO Deliveries... " />
+            <marker date="1527252972214" expanded="true" signature="1144:1179" ph="DELETE FROM " />
+            <marker date="1527252972214" expanded="true" signature="1506:1618" ph="UPDATE Deliv... " />
+            <marker date="1527252972214" expanded="true" signature="2169:2208" ph="SELECT * FRO... Deliveries" />
+            <marker date="1527252972214" expanded="true" signature="3437:3624" ph="SELECT * FRO... LicensesForDrivers" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAL/Tables.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1620">
+          <caret line="54" column="34" lean-forward="false" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1527252972282" expanded="true" signature="1636:1774" ph="CREATE TABLE... Models" />
+            <marker date="1527252972282" expanded="true" signature="2043:2433" ph="CREATE TABLE... Trucks" />
+            <marker date="1527252972282" expanded="true" signature="2706:2962" ph="CREATE TABLE... Licenses" />
+            <marker date="1527252972282" expanded="true" signature="3244:3660" ph="CREATE TABLE... LicensesForDrivers" />
+            <marker date="1527252972282" expanded="true" signature="3930:4225" ph="CREATE TABLE... Places" />
+            <marker date="1527252972282" expanded="true" signature="4542:5187" ph="CREATE TABLE... Deliveries" />
+            <marker date="1527252972282" expanded="true" signature="5472:5994" ph="CREATE TABLE... DeliveryDestinations" />
+            <marker date="1527252972282" expanded="true" signature="6276:6603" ph="CREATE TABLE... Workers" />
+            <marker date="1527252972282" expanded="true" signature="6856:7255" ph="CREATE TABLE... Shifts" />
+            <marker date="1527252972282" expanded="true" signature="7506:7720" ph="CREATE TABLE... Roles" />
+            <marker date="1527252972282" expanded="true" signature="8010:8340" ph="CREATE TABLE... BankAccounts" />
+            <marker date="1527252972282" expanded="true" signature="8599:8968" ph="CREATE TABLE... WorkersRoles" />
+            <marker date="1527252972282" expanded="true" signature="9230:9898" ph="CREATE TABLE... WorkersAvailableShifts" />
+            <marker date="1527252972282" expanded="true" signature="10158:10907" ph="CREATE TABLE... WorkersShifts" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAL/DAL_T/DriversLicenses.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding>
+            <marker date="1527252972241" expanded="true" signature="425:469" ph="INSERT INTO LicensesForDrivers... " />
+            <marker date="1527252972241" expanded="true" signature="978:1049" ph="DELETE FROM " />
+            <marker date="1527252972241" expanded="true" signature="1615:1669" ph="SELECT * FRO... LicensesForDrivers" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAL/DAL_W/WorkersDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <marker date="1527252972265" expanded="true" signature="969:1231" ph="CREATE TABLE... Workers" />
+            <marker date="1527252972265" expanded="true" signature="1484:1683" ph="CREATE TABLE... Shifts" />
+            <marker date="1527252972265" expanded="true" signature="1934:2089" ph="CREATE TABLE... Roles" />
+            <marker date="1527252972265" expanded="true" signature="2347:2677" ph="CREATE TABLE... BankAccounts" />
+            <marker date="1527252972265" expanded="true" signature="2936:3305" ph="CREATE TABLE... WorkersRoles" />
+            <marker date="1527252972265" expanded="true" signature="3567:4054" ph="CREATE TABLE... WorkersAvailableShifts" />
+            <marker date="1527252972265" expanded="true" signature="4314:4882" ph="CREATE TABLE... WorkersShifts" />
+            <marker date="1527252972265" expanded="true" signature="5637:5738" ph="Insert INTO Workers... " />
+            <marker date="1527252972265" expanded="true" signature="5767:5888" ph="Insert INTO BankAccounts... " />
+            <marker date="1527252972265" expanded="true" signature="6946:7150" ph="SELECT W.FNa... Workers" />
+            <marker date="1527252972265" expanded="true" signature="8182:8307" ph="SELECT R.Rol... Roles" />
+            <marker date="1527252972265" expanded="true" signature="9149:9254" ph="UPDATE BankA... " />
+            <marker date="1527252972265" expanded="true" signature="9901:10012" ph="Insert INTO WorkersAvailableShifts... " />
+            <marker date="1527252972265" expanded="true" signature="10518:10582" ph="Update Worke... " />
+            <marker date="1527252972265" expanded="true" signature="11161:11267" ph="DELETE FROM " />
+            <marker date="1527252972265" expanded="true" signature="11795:11872" ph="DELETE FROM " />
+            <marker date="1527252972265" expanded="true" signature="12399:12451" ph="DELETE FROM " />
+            <marker date="1527252972265" expanded="true" signature="13026:13083" ph="Insert Into WorkersRoles... " />
+            <marker date="1527252972265" expanded="true" signature="13517:13558" ph="SELECT RoleI... Roles" />
+            <marker date="1527252972265" expanded="true" signature="14122:14457" ph="SELECT W.ID,... Workers" />
+            <marker date="1527252972265" expanded="true" signature="15606:15826" ph="SELECT W.ID,... Workers" />
+            <marker date="1527252972265" expanded="true" signature="17071:17130" ph="INSERT INTO Shifts... " />
+            <marker date="1527252972265" expanded="true" signature="17629:17664" ph="Select RoleI... Roles" />
+            <marker date="1527252972265" expanded="true" signature="18185:18224" ph="INSERT INTO Roles... " />
+            <marker date="1527252972265" expanded="true" signature="18636:18674" ph="Select * fro... Roles" />
+            <marker date="1527252972265" expanded="true" signature="19203:19246" ph="Select Shift... Shifts" />
+            <marker date="1527252972265" expanded="true" signature="19780:19837" ph="Select * Fro... Shifts" />
+            <marker date="1527252972265" expanded="true" signature="20357:20449" ph="INSERT INTO WorkersShifts... " />
+            <marker date="1527252972265" expanded="true" signature="21024:21111" ph="SELECT * FRO... WorkersAvailableShifts" />
+            <marker date="1527252972265" expanded="true" signature="21677:21756" ph="SELECT * FRO... WorkersShifts" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAL/DAL_T/Deliveries.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1527252972214" expanded="true" signature="443:486" ph="INSERT INTO Deliveries... " />
+            <marker date="1527252972214" expanded="true" signature="1144:1179" ph="DELETE FROM " />
+            <marker date="1527252972214" expanded="true" signature="1506:1618" ph="UPDATE Deliv... " />
+            <marker date="1527252972214" expanded="true" signature="2169:2208" ph="SELECT * FRO... Deliveries" />
+            <marker date="1527252972214" expanded="true" signature="3437:3624" ph="SELECT * FRO... LicensesForDrivers" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAL/DAL_T/DriversLicenses.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding>
+            <marker date="1527252972241" expanded="true" signature="425:469" ph="INSERT INTO LicensesForDrivers... " />
+            <marker date="1527252972241" expanded="true" signature="978:1049" ph="DELETE FROM " />
+            <marker date="1527252972241" expanded="true" signature="1615:1669" ph="SELECT * FRO... LicensesForDrivers" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PL/PL_T/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/PL/PL_T/Functor.java" />
+    <entry file="file://$PROJECT_DIR$/src/BL/BL_W/ShiftLogic.java" />
+    <entry file="file://$PROJECT_DIR$/src/BL/BL_W/WorkerLogic.java" />
+    <entry file="file://$PROJECT_DIR$/src/BL/BL_W/RolesLogic.java" />
+    <entry file="file://$PROJECT_DIR$/src/BL/BL_W/Entities_W/Worker.java" />
+    <entry file="file://$PROJECT_DIR$/src/BL/BL_W/Entities_W/Shift.java" />
+    <entry file="file://$PROJECT_DIR$/src/BL/BL_W/Entities_W/Role.java" />
+    <entry file="file://$PROJECT_DIR$/src/BL/BL_W/Entities_W/BankAccount.java" />
+    <entry file="file://$PROJECT_DIR$/src/PL/PL_T/Functor.java" />
+    <entry file="file://$PROJECT_DIR$/src/BL/BL_W/ShiftLogic.java" />
+    <entry file="file://$PROJECT_DIR$/src/BL/BL_W/WorkerLogic.java" />
+    <entry file="file://$PROJECT_DIR$/src/BL/BL_W/RolesLogic.java" />
+    <entry file="file://$PROJECT_DIR$/src/BL/BL_W/Entities_W/Shift.java" />
+    <entry file="file://$PROJECT_DIR$/src/BL/BL_W/Entities_W/Role.java" />
+    <entry file="file://$PROJECT_DIR$/src/BL/BL_W/Entities_W/BankAccount.java" />
+    <entry file="file://$PROJECT_DIR$/src/PL/PL_W/insertCommand/InsertRole.java" />
+    <entry file="file://$PROJECT_DIR$/src/utils_W/Utils.java" />
+    <entry file="file://$PROJECT_DIR$/src/PL/PL_T/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/DAL/DAL_T/CreateTables.java" />
+    <entry file="file://$PROJECT_DIR$/src/DAL/DAL_T/Drivers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="81" column="7" lean-forward="false" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAL/DAL_T/Utils.java" />
+    <entry file="file://$PROJECT_DIR$/src/DAL/DAL_T/DeliveryDestinations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="57" column="37" lean-forward="false" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
+          <folding>
+            <marker date="1527252972227" expanded="true" signature="462:517" ph="INSERT INTO DeliveryDestinations... " />
+            <marker date="1527252972227" expanded="true" signature="1269:1341" ph="DELETE FROM " />
+            <marker date="1527252972227" expanded="true" signature="1859:1932" ph="SELECT * FRO... DeliveryDestinations" />
+            <marker date="1527252972227" expanded="true" signature="2413:2471" ph="SELECT * FRO... DeliveryDestinations" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAL/DAL_T/ErrorsHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="56" column="32" lean-forward="false" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAL/DAL_T/LicenseForTruck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="65" column="32" lean-forward="false" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAL/DAL_T/Models.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="46" column="32" lean-forward="false" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAL/DAL_T/Orders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="31" column="37" lean-forward="false" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAL/DAL_T/Places.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="53" column="32" lean-forward="false" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
+          <folding>
+            <marker date="1527252972243" expanded="true" signature="309:347" ph="INSERT INTO Places... " />
+            <marker date="1527252972243" expanded="true" signature="909:940" ph="DELETE FROM " />
+            <marker date="1527252972243" expanded="true" signature="1371:1405" ph="SELECT * FRO... Places" />
+            <marker date="1527252972243" expanded="true" signature="1968:2048" ph="UPDATE Place... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAL/DAL_T/Trucks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="63" column="17" lean-forward="true" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
+          <folding>
+            <marker date="1527252972281" expanded="true" signature="356:396" ph="INSERT INTO Trucks... " />
+            <marker date="1527252972281" expanded="true" signature="1024:1057" ph="DELETE FROM " />
+            <marker date="1527252972281" expanded="true" signature="1487:1522" ph="SELECT * FRO... Trucks" />
+            <marker date="1527252972281" expanded="true" signature="2061:2145" ph="UPDATE Truck... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BL/BL_T/Entities/LicenseTypeForTruck.java" />
+    <entry file="file://$PROJECT_DIR$/src/DAL/DAL_T/DriversLicenses.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding>
+            <marker date="1527252972241" expanded="true" signature="425:469" ph="INSERT INTO LicensesForDrivers... " />
+            <marker date="1527252972241" expanded="true" signature="978:1049" ph="DELETE FROM " />
+            <marker date="1527252972241" expanded="true" signature="1615:1669" ph="SELECT * FRO... LicensesForDrivers" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAL/DAL_T/Deliveries.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1860">
+          <caret line="69" column="17" lean-forward="false" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
+          <folding>
+            <marker date="1527252972214" expanded="true" signature="443:486" ph="INSERT INTO Deliveries... " />
+            <marker date="1527252972214" expanded="true" signature="1144:1179" ph="DELETE FROM " />
+            <marker date="1527252972214" expanded="true" signature="1506:1618" ph="UPDATE Deliv... " />
+            <marker date="1527252972214" expanded="true" signature="2169:2208" ph="SELECT * FRO... Deliveries" />
+            <marker date="1527252972214" expanded="true" signature="3437:3624" ph="SELECT * FRO... LicensesForDrivers" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BL/BL_T/Entities/Delivery.java" />
+    <entry file="file://$PROJECT_DIR$/src/PL/PL_W/insertCommand/InsertWorker.java" />
+    <entry file="file://$PROJECT_DIR$/src/PL/PL_W/selectCommand/SelectWorker.java" />
+    <entry file="file://$PROJECT_DIR$/src/BL/BL_W/Entities_W/Worker.java" />
+    <entry file="file://$PROJECT_DIR$/src/BL/BL_T/EntitiyFunctions/DriverFunctions.java" />
+    <entry file="file://$PROJECT_DIR$/src/BL/BL_T/EntitiyFunctions/DeliveryFunctions.java" />
+    <entry file="file://$PROJECT_DIR$/src/PL/PL_T/insertHandlers/InsertDelivery.java" />
+    <entry file="file://$PROJECT_DIR$/src/DAL/Tables.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1620">
+          <caret line="54" column="34" lean-forward="false" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1527252972282" expanded="true" signature="1636:1774" ph="CREATE TABLE... Models" />
+            <marker date="1527252972282" expanded="true" signature="2043:2433" ph="CREATE TABLE... Trucks" />
+            <marker date="1527252972282" expanded="true" signature="2706:2962" ph="CREATE TABLE... Licenses" />
+            <marker date="1527252972282" expanded="true" signature="3244:3660" ph="CREATE TABLE... LicensesForDrivers" />
+            <marker date="1527252972282" expanded="true" signature="3930:4225" ph="CREATE TABLE... Places" />
+            <marker date="1527252972282" expanded="true" signature="4542:5187" ph="CREATE TABLE... Deliveries" />
+            <marker date="1527252972282" expanded="true" signature="5472:5994" ph="CREATE TABLE... DeliveryDestinations" />
+            <marker date="1527252972282" expanded="true" signature="6276:6603" ph="CREATE TABLE... Workers" />
+            <marker date="1527252972282" expanded="true" signature="6856:7255" ph="CREATE TABLE... Shifts" />
+            <marker date="1527252972282" expanded="true" signature="7506:7720" ph="CREATE TABLE... Roles" />
+            <marker date="1527252972282" expanded="true" signature="8010:8340" ph="CREATE TABLE... BankAccounts" />
+            <marker date="1527252972282" expanded="true" signature="8599:8968" ph="CREATE TABLE... WorkersRoles" />
+            <marker date="1527252972282" expanded="true" signature="9230:9898" ph="CREATE TABLE... WorkersAvailableShifts" />
+            <marker date="1527252972282" expanded="true" signature="10158:10907" ph="CREATE TABLE... WorkersShifts" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAL/DAL_W/WorkersDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+          <folding>
+            <marker date="1527252972265" expanded="true" signature="969:1231" ph="CREATE TABLE... Workers" />
+            <marker date="1527252972265" expanded="true" signature="1484:1683" ph="CREATE TABLE... Shifts" />
+            <marker date="1527252972265" expanded="true" signature="1934:2089" ph="CREATE TABLE... Roles" />
+            <marker date="1527252972265" expanded="true" signature="2347:2677" ph="CREATE TABLE... BankAccounts" />
+            <marker date="1527252972265" expanded="true" signature="2936:3305" ph="CREATE TABLE... WorkersRoles" />
+            <marker date="1527252972265" expanded="true" signature="3567:4054" ph="CREATE TABLE... WorkersAvailableShifts" />
+            <marker date="1527252972265" expanded="true" signature="4314:4882" ph="CREATE TABLE... WorkersShifts" />
+            <marker date="1527252972265" expanded="true" signature="5637:5738" ph="Insert INTO Workers... " />
+            <marker date="1527252972265" expanded="true" signature="5767:5888" ph="Insert INTO BankAccounts... " />
+            <marker date="1527252972265" expanded="true" signature="6946:7150" ph="SELECT W.FNa... Workers" />
+            <marker date="1527252972265" expanded="true" signature="8182:8307" ph="SELECT R.Rol... Roles" />
+            <marker date="1527252972265" expanded="true" signature="9149:9254" ph="UPDATE BankA... " />
+            <marker date="1527252972265" expanded="true" signature="9901:10012" ph="Insert INTO WorkersAvailableShifts... " />
+            <marker date="1527252972265" expanded="true" signature="10518:10582" ph="Update Worke... " />
+            <marker date="1527252972265" expanded="true" signature="11161:11267" ph="DELETE FROM " />
+            <marker date="1527252972265" expanded="true" signature="11795:11872" ph="DELETE FROM " />
+            <marker date="1527252972265" expanded="true" signature="12399:12451" ph="DELETE FROM " />
+            <marker date="1527252972265" expanded="true" signature="13026:13083" ph="Insert Into WorkersRoles... " />
+            <marker date="1527252972265" expanded="true" signature="13517:13558" ph="SELECT RoleI... Roles" />
+            <marker date="1527252972265" expanded="true" signature="14122:14457" ph="SELECT W.ID,... Workers" />
+            <marker date="1527252972265" expanded="true" signature="15606:15826" ph="SELECT W.ID,... Workers" />
+            <marker date="1527252972265" expanded="true" signature="17071:17130" ph="INSERT INTO Shifts... " />
+            <marker date="1527252972265" expanded="true" signature="17629:17664" ph="Select RoleI... Roles" />
+            <marker date="1527252972265" expanded="true" signature="18185:18224" ph="INSERT INTO Roles... " />
+            <marker date="1527252972265" expanded="true" signature="18636:18674" ph="Select * fro... Roles" />
+            <marker date="1527252972265" expanded="true" signature="19203:19246" ph="Select Shift... Shifts" />
+            <marker date="1527252972265" expanded="true" signature="19780:19837" ph="Select * Fro... Shifts" />
+            <marker date="1527252972265" expanded="true" signature="20357:20449" ph="INSERT INTO WorkersShifts... " />
+            <marker date="1527252972265" expanded="true" signature="21024:21111" ph="SELECT * FRO... WorkersAvailableShifts" />
+            <marker date="1527252972265" expanded="true" signature="21677:21756" ph="SELECT * FRO... WorkersShifts" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Ass3</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>sqlite-jdbc-3.21.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
