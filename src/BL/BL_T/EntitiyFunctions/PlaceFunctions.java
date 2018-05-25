@@ -13,7 +13,7 @@ public class PlaceFunctions {
 
     public static void insertPlace(Place place){
 
-        Places.insertPlace(place.getId(), place.getAddress(), place.getPhoneNumber(), place.getContactName());
+        Places.insertPlace(place.getId(), place.getAddress(), place.getPhoneNumber(), place.getContactName().getId());
     }
 
     public static Place retrievePlace(String id){

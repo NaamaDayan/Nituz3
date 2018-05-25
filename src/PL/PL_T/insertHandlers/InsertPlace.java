@@ -3,6 +3,8 @@ package PL.PL_T.insertHandlers;
 
 import BL.BL_T.Entities.Place;
 import BL.BL_T.EntitiyFunctions.PlaceFunctions;
+import BL.BL_W.Entities_W.Worker;
+import BL.BL_W.WorkerLogic;
 import PL.PL_T.Functor;
 
 import java.util.Scanner;
@@ -26,9 +28,14 @@ public class InsertPlace extends Functor {
         String address = reader.next();
         System.out.println("enter place phone number");
         String phoneNumber = reader.next();
-        System.out.println("enter place contact name");
-        String contactName = reader.next();
-        Place place = new Place(placeId, address, phoneNumber, contactName);
+        System.out.println("enter place contact worker id");
+        String contactId = reader.next();
+        Worker contact = WorkerLogic.getWorker(contactId);
+        if (contact == null){
+            System.out.println("worker does not exist");
+            return;
+        }
+        Place place = new Place(placeId, address, phoneNumber, contact);
         PlaceFunctions.insertPlace(place);
     }
 

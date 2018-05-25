@@ -2,6 +2,8 @@ package PL.PL_T.updateHandlers;
 
 import BL.BL_T.Entities.Place;
 import BL.BL_T.EntitiyFunctions.PlaceFunctions;
+import BL.BL_W.Entities_W.Worker;
+import BL.BL_W.WorkerLogic;
 import PL.PL_T.Functor;
 import PL.PL_T.Utils;
 
@@ -40,9 +42,14 @@ public class UpdatePlace extends Functor {
             p.setPhoneNumber(newField);
         }
         if (Utils.boolQuery("update contact name? y/n")) {
-            System.out.println("enter contact name");
+            System.out.println("enter contact worker id");
             newField = reader.next();
-            p.setContactName(newField);
+            Worker contact = WorkerLogic.getWorker(newField);
+            if (contact == null){
+                System.out.println("contact worker does not exist!");
+                return;
+            }
+            p.setContactName(contact);
         }
         try {
             PlaceFunctions.updatePlace(p);

@@ -1,13 +1,15 @@
 package BL.BL_T.Entities;
 
+import BL.BL_W.Entities_W.Worker;
+
 public class Place {
 
     private String id;
     private String address;
     private String phoneNumber;
-    private String contactName;
+    private Worker contactName;
 
-    public Place(String id, String address, String phoneNumber, String contactName) {
+    public Place(String id, String address, String phoneNumber, Worker contactName) {
         this.id = id;
         this.address = address;
         this.phoneNumber = phoneNumber;
@@ -36,7 +38,7 @@ public class Place {
         return phoneNumber;
     }
 
-    public String getContactName() {
+    public Worker getContactName() {
         return contactName;
     }
 
@@ -48,7 +50,7 @@ public class Place {
         this.phoneNumber = phoneNumber;
     }
 
-    public void setContactName(String contactName) {
+    public void setContactName(Worker contactName) {
         this.contactName = contactName;
     }
 }
