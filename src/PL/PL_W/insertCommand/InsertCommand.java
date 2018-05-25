@@ -16,9 +16,9 @@ public class InsertCommand implements Command {
         insertCommands.put("2" , new CreateShift());
         insertCommands.put("3", new InsertWorkersAvailableShifts());
         insertCommands.put("4" , new ScheduleWorker());
-        insertCommands.put("5", new InsertRole());
+        insertCommands.put("5", (Command) new InsertRole());
         insertCommands.put("6" , new InsertRoleForWorker());
-        insertCommands.put("7", new mainMenuCommand());
+        insertCommands.put("7", (Command) new mainMenuCommand());
     }
 
     @Override

@@ -14,7 +14,7 @@ public class RemoveCommand implements Command {
         removeCommands.put("1", new RemoveRoleFromWorker());
         removeCommands.put("2", new RemoveAvailableShift());
         removeCommands.put("3", new RemoveActualShift());
-        removeCommands.put("4", new mainMenuCommand());
+        removeCommands.put("4", (Command) new mainMenuCommand());
     }
 
 

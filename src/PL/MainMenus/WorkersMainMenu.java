@@ -41,7 +41,7 @@ public  class WorkersMainMenu extends Functor {
         commands.put("2", new UpdateCommand());
         commands.put("3", new SelectCommand());
         commands.put("4", new RemoveCommand());
-        commands.put("5", new mainMenuCommand());
+        commands.put("5", (Command) new mainMenuCommand());
     }
 
     public static void userManual() {

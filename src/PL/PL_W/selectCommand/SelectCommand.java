@@ -14,7 +14,7 @@ public class SelectCommand implements Command {
         selectCommands.put("1", new SelectAvailableWorkers());
         selectCommands.put("2", new SelectAssignedWorkers());
         selectCommands.put("3", new SelectWorker());
-        selectCommands.put("4", new mainMenuCommand());
+        selectCommands.put("4", (Command) new mainMenuCommand());
     }
 
 

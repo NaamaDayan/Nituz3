@@ -14,7 +14,7 @@ public class UpdateCommand implements Command {
     public UpdateCommand(){
         updateCommands.put("1", new UpdateWorker());
         updateCommands.put("2", new UpdateBankAccount());
-        updateCommands.put("3", new mainMenuCommand());
+        updateCommands.put("3", (Command) new mainMenuCommand());
     }
 
     @Override
