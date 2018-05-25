@@ -1,8 +1,11 @@
 package BL.BL_T.EntitiyFunctions;
 
 import BL.BL_T.Entities.Place;
+import BL.BL_W.Entities_W.Shift;
 import DAL.DAL_T.ErrorsHandler;
 import DAL.DAL_T.Places;
+import DAL.DAL_W.WorkersDatabase;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.sql.SQLException;
 
@@ -30,6 +33,10 @@ public class PlaceFunctions {
 
     public static boolean isExist(String id) throws Exception {
         return ErrorsHandler.isPlaceExist(id);
+    }
+
+    public static boolean isShiftExistInPlace(Place place, Shift shift) throws Exception {
+        return Places.isShiftExistInPlace(shift, place);
     }
 
 }

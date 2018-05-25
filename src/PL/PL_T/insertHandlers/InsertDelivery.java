@@ -97,7 +97,6 @@ public class InsertDelivery extends Functor{
             System.out.println("driver cannot drive this truck!");
             return;
         }
-            // TODO: 25/05/2018 add driver in shift constrain (N)
         if(!ShiftLogic.isWorkerAssignedForShift(driver, shift)){
             System.out.println("driver is not register to a shift in the given date");
             return;
@@ -110,9 +109,14 @@ public class InsertDelivery extends Functor{
                 return;
             }
         Place place = PlaceFunctions.retrievePlace(placeId);
-
-            // TODO: 25/05/18 is shift exist in source place
-            // TODO: 25/05/18 is driver available for shift
+        if (!PlaceFunctions.isShiftExistInPlace(place, shift)) {
+            System.out.println("there is no such shift in the specified place");
+            return;
+        }
+        if (!WorkerLogic.isWorkerAvailableForShift(driver, shift)) {
+            System.out.println("the driver is not available for the shift");
+            return;
+        }
         //insert the delivery
         Delivery delivery = new Delivery(deliveryId, leavingDate, leavingHour, truck, driver, place, new LinkedList<>());
         DeliveryFunctions.insertDelivery(delivery);
@@ -122,9 +126,31 @@ public class InsertDelivery extends Functor{
             DeliveryFunctions.removeDelivery(deliveryId);
             return;
         }
+        Place destPlace = PlaceFunctions.retrievePlace(firstDest);
+        if (!PlaceFunctions.isShiftExistInPlace(destPlace, shift)) {
+            System.out.println("there is no such shift in the specified place");
+            DeliveryFunctions.removeDelivery(deliveryId);
+            return;
+        }
+        if (!ShiftLogic.isStoreKeeperExistInShift(shift)) {
+            System.out.println("there is no storeKeeper registered in the shift");
+            DeliveryFunctions.removeDelivery(deliveryId);
+            return;
+        }
         while (Utils.boolQuery("do you want to add another destination? y/n")) {
             String dest = InsertDeliveryDestination.insertDestination(deliveryId);
             if (dest == null){
+                DeliveryFunctions.removeDelivery(deliveryId);
+                return;
+            }
+            destPlace = PlaceFunctions.retrievePlace(dest);
+            if (!PlaceFunctions.isShiftExistInPlace(destPlace, shift)) {
+                System.out.println("there is no such shift in the specified place");
+                DeliveryFunctions.removeDelivery(deliveryId);
+                return;
+            }
+            if (!ShiftLogic.isStoreKeeperExistInShift(shift)) {
+                System.out.println("there is no storeKeeper registered in the shift");
                 DeliveryFunctions.removeDelivery(deliveryId);
                 return;
             }

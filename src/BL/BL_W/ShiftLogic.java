@@ -50,6 +50,6 @@ public class ShiftLogic {
 
     //todo: implement this
     public static boolean isStoreKeeperExistInShift(Shift shift){
-        throw new NotImplementedException();
+        return WorkersDatabase.isStoreKeeperExistInShift(shift);
     }
 }
