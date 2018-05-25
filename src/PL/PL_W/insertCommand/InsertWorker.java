@@ -35,6 +35,8 @@ public class InsertWorker implements Command {
         String fname = reader.next();
         System.out.println("Enter Last Name:");
         String lname = reader.next();
+        System.out.println("Enter Phone Number:");
+        String phoneNum = reader.next();
         System.out.println("Enter Worker's Employment Date:");
         String employmentDate = reader.next();
         System.out.println("Bank Account information:");
@@ -50,6 +52,6 @@ public class InsertWorker implements Command {
             d = new SimpleDateFormat("dd/MM/yyyy").parse(employmentDate);
         } catch (ParseException e) {
         }
-        return new Worker(id, fname, lname,new java.sql.Date(d.getTime()), bankAccount);
+        return new Worker(id, fname, lname, phoneNum, new java.sql.Date(d.getTime()), bankAccount);
     }
 }

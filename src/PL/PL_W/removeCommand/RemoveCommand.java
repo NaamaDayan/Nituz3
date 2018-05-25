@@ -28,6 +28,6 @@ public class RemoveCommand implements Command {
         System.out.println("1 - remove a role of a certain worker");
         System.out.println("2 - remove an available shift of a certain worker");
         System.out.println("3 - remove an actual shift of a certain worker");
-        System.out.println("4 - Return to main menu");
+        System.out.println("4 - Return to previous menu");
     }
 }

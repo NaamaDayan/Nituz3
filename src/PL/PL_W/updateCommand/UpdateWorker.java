@@ -40,6 +40,12 @@ public class UpdateWorker implements Command {
                 w.setLname(toUpdate);
             }
 
+            if(Utils.boolQuery("update phone number? y/n")){
+                System.out.println("enter phone number");
+                toUpdate = reader.next();
+                w.setPhoneNum(toUpdate);
+            }
+
             if(Utils.boolQuery("update employment date? y/n")){
                 System.out.println("enter employment date");
                 toUpdate = reader.next();

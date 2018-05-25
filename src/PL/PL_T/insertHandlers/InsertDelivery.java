@@ -85,6 +85,10 @@ public class InsertDelivery extends Functor{
                 System.out.println("driver does not exist");
                 return;
             }
+            else if (!driver.isDriver()) {
+                System.out.println("selected worker is not driver");
+                return;
+            }
         } catch (Exception e) {
             System.out.println("error: insertion failed");
             return;
@@ -106,6 +110,9 @@ public class InsertDelivery extends Functor{
                 return;
             }
         Place place = PlaceFunctions.retrievePlace(placeId);
+
+            // TODO: 25/05/18 is shift exist in source place
+            // TODO: 25/05/18 is driver available for shift
         //insert the delivery
         Delivery delivery = new Delivery(deliveryId, leavingDate, leavingHour, truck, driver, place, new LinkedList<>());
         DeliveryFunctions.insertDelivery(delivery);

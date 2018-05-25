@@ -11,7 +11,6 @@ public class RetrieveChoice extends Functor {
 
     enum retrieveFunctions {
         RetrieveTruck,
-        RetrieveDriver,
         RetrieveLicense,
         RetrieveDelivery,
         RetrievePlace,
@@ -22,10 +21,10 @@ public class RetrieveChoice extends Functor {
     @Override
     public void execute() throws ParseException {
         Functor retrieveFuncs[] = fillRetrieveFunctions();
-        System.out.println("Enter:\n 1 to retrieve Truck\n 2 to retrieve driver\n 3 to retrieve license\n 4 to retrieve delivery \n 5 to retrieve place\n 6 to retrieve license of driver \n 7 to retrieve truck model\n 8 for main menu");
+        System.out.println("Enter:\n 1 to retrieve Truck\n 2 to retrieve license\n 3 to retrieve delivery \n 4 to retrieve place\n 5 to retrieve license of driver \n 6 to retrieve truck model\n 7 for previous menu");
         int retrieveChoice = reader.nextInt();
-        retrieveChoice = TransportsMainMenu.rangeCheck(1, 8, retrieveChoice);
-        if (retrieveChoice == 8)
+        retrieveChoice = TransportsMainMenu.rangeCheck(1, 7, retrieveChoice);
+        if (retrieveChoice == 7)
             return;
         retrieveFuncs[retrieveChoice-1].execute();
     }

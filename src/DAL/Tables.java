@@ -40,7 +40,7 @@ public class Tables {
             connection = DriverManager.getConnection("jdbc:sqlite:" + databaseName);
             connection.createStatement().execute("PRAGMA foreign_keys = ON");
         } catch (Exception e) {
-            System.exit(0);
+            e.printStackTrace();
         }
         return connection;
     }

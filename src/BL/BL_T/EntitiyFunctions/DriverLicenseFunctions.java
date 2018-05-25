@@ -11,6 +11,8 @@ import java.util.List;
  */
 public class DriverLicenseFunctions {
 
+    //pre-for-all: driverId is an id of worker who has the role "Driver"
+
     public static void insertDriverLicense(LicenseTypeForTruck license, String driverId){
         DriversLicenses.insertDriverLicense(driverId, license.getLicenseType());
     }

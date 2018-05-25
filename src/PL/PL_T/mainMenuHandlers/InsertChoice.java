@@ -22,10 +22,10 @@ public class InsertChoice extends Functor {
     @Override
     public void execute() throws ParseException {
         Functor insertFuncs[] = fillInsertFunctions();
-        System.out.println("Enter:\n 1 to insert Truck\n 2 to insert license\n 3 to insert delivery \n 4 to insert place\n 5 to insert license for driver\n 6 to insert delivery destination\n 7 to insert truck model\n 8 for main menu");
+        System.out.println("Enter:\n 1 to insert Truck\n 2 to insert license\n 3 to insert delivery \n 4 to insert place\n 5 to insert license for driver\n 6 to insert delivery destination\n 7 to insert truck model\n 8 for previous menu");
         int insertChoice = reader.nextInt();
-        insertChoice = TransportsMainMenu.rangeCheck(1, 9, insertChoice);
-        if (insertChoice == 9)
+        insertChoice = TransportsMainMenu.rangeCheck(1, 8, insertChoice);
+        if (insertChoice == 8)
             return;
         insertFuncs[insertChoice-1].execute();
     }

@@ -13,7 +13,8 @@ import java.util.*;
 public class WorkersDatabase {
     private static final String databaseName = "WorkersModule.db";
 
-    public static void createDatabase() {
+    // TODO: 25/05/18 we shall not use all of the create-tables functions anymore, consider deleting them(S)
+   /* public static void createDatabase() {
         try (Connection connection = openConnection()) {
             createWorkers(connection);
             createBankAccounts(connection);
@@ -25,7 +26,7 @@ public class WorkersDatabase {
         } catch (SQLException e) {
             e.getMessage();
         }
-    }
+    }*/
 
     public static void createWorkers(Connection connection) {
         try (Statement statement = connection.createStatement()) {
@@ -115,11 +116,12 @@ public class WorkersDatabase {
         }
     }
 
-    public static void openDatabase() {
+    // TODO: 25/05/18 we shall not use this anymore, consider deleting (S)
+    /*public static void openDatabase() {
         File f = new File(databaseName);
         if (!f.exists())
             WorkersDatabase.createDatabase();
-    }
+    }*/
 
     public static Connection openConnection() {
         Connection connection = null;
@@ -134,8 +136,8 @@ public class WorkersDatabase {
     }
 
     public static boolean insertWorker(Worker worker) {
-        String workersSql = "Insert INTO Workers (ID , FName , LName , EmploymentDate) " +
-                "VALUES (? , ? , ? , ?)";
+        String workersSql = "Insert INTO Workers (ID , FName, LName, PhoneNumber, EmploymentDate) " +
+                "VALUES (? , ? , ? , ? , ?)";
         String bankSql = "Insert INTO BankAccounts (WorkerID , BankCode , BranchNumber , AccountNumber) " +
                 "VALUES (? , ? , ? , ?)";
 
@@ -146,7 +148,8 @@ public class WorkersDatabase {
             pstmt1.setString(1, worker.getId());
             pstmt1.setString(2, worker.getFname());
             pstmt1.setString(3, worker.getLname());
-            pstmt1.setDate(4, worker.getEmploymentDate());
+            pstmt1.setString(4, worker.getPhoneNum());
+            pstmt1.setDate(5, worker.getEmploymentDate());
             pstmt1.executeUpdate();
             pstmt2.setString(1, worker.getId());
             pstmt2.setString(2, worker.getBankAccount().getBankCode());
@@ -162,7 +165,7 @@ public class WorkersDatabase {
 
     // TODO: 26/04/18 change
     public static Worker getWorker(String id) {
-        String sql = "SELECT W.FName, W.LNAME, W.EmploymentDate, BA.BankCode, BA.AccountNumber" +
+        String sql = "SELECT W.FName, W.LNAME, W.LNAME, W.PhoneNumber, W.EmploymentDate, BA.BankCode, BA.AccountNumber" +
                 ", BA.BranchNumber FROM Workers AS W,BankAccounts AS BA " +
                 " WHERE  W.ID=BA.WorkerID AND W.ID=?";
         try (Connection connection = openConnection();
@@ -174,12 +177,13 @@ public class WorkersDatabase {
             } else {
                 String fName = rs.getString("FName");
                 String lName = rs.getString("LName");
+                String phoneNum = rs.getString("PhoneNumber");
                 Date employmentDate = rs.getDate("EmploymentDate");
                 String bankCode = rs.getString("BankCode");
                 String accountNumber = rs.getString("AccountNumber");
                 String branchNumber = rs.getString("BranchNumber");
                 List<Role> roles = getRoles(id);
-                return new Worker(id, fName, lName, employmentDate, new BankAccount(bankCode, accountNumber, branchNumber), roles);
+                return new Worker(id, fName, lName, phoneNum, employmentDate, new BankAccount(bankCode, accountNumber, branchNumber), roles);
             }
         } catch (SQLException e) {
         }
@@ -247,13 +251,14 @@ public class WorkersDatabase {
     }
 
     public static boolean updateWorker(Worker worker) {
-        String sql = "Update Workers SET FName=?, LName=?, EmploymentDate=? WHERE ID=?";
+        String sql = "Update Workers SET FName=?, LName=?, PhoneNumber=?, EmploymentDate=? WHERE ID=?";
         try (Connection connection = openConnection();
              PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setString(1, worker.getFname());
             pstmt.setString(2, worker.getLname());
-            pstmt.setDate(3, worker.getEmploymentDate());
-            pstmt.setString(4, worker.getId());
+            pstmt.setString(3, worker.getPhoneNum());
+            pstmt.setDate(4, worker.getEmploymentDate());
+            pstmt.setString(5, worker.getId());
             pstmt.executeUpdate();
             return true;
         } catch (SQLException e) {
@@ -342,7 +347,7 @@ public class WorkersDatabase {
     }
 
     public static Map<Worker, Role> selectAssignedWorkers(Shift shift) {
-        String sql = "SELECT W.ID, W.FName, W.LName, R.RoleName FROM Workers AS W " +
+        String sql = "SELECT W.ID, W.FName, W.LName, W.PhoneNumber, R.RoleName FROM Workers AS W " +
                 "INNER JOIN WorkersShifts AS WS INNER JOIN WorkersRoles as WR INNER JOIN Roles AS R " +
                 " WHERE W.ID = WS.WorkerID AND WS.WorkerID=WR.WorkerID AND WS.Role=WR.Role AND WR.Role=R.RoleID" +
                 " AND ShiftDate=? AND ShiftDayPart=?";
@@ -366,8 +371,9 @@ public class WorkersDatabase {
                 String ID = rs.getString("ID");
                 String fName = rs.getString("FName");
                 String lName = rs.getString("LName");
+                String phoneNum = rs.getString("PhoneNumber");
                 String role = rs.getString("RoleName");
-                data.put(new Worker(ID, fName, lName, null), new Role(role));
+                data.put(new Worker(ID, fName, lName, phoneNum, null), new Role(role));
             }
 
         } catch (SQLException e) {
@@ -378,7 +384,7 @@ public class WorkersDatabase {
 
 
     public static List<Worker> selectAvailableWorkers(Shift shift) {
-        String sql = "SELECT W.ID, W.FName, W.LName FROM Workers AS W " +
+        String sql = "SELECT W.ID, W.FName, W.LName, W.PhoneNumber FROM Workers AS W " +
                 "INNER JOIN WorkersAvailableShifts AS WAS " +
                 "WHERE W.ID = WAS.WorkerID " +
                 " AND WAS.DateAvailable=? AND WAS.DayPart=? ";
@@ -403,7 +409,8 @@ public class WorkersDatabase {
                 String ID = resultSet.getString("ID");
                 String fName = resultSet.getString("FName");
                 String lName = resultSet.getString("LName");
-                Worker toAdd = new Worker(ID, fName, lName, null);
+                String phoneNum = resultSet.getString("PhoneNumber");
+                Worker toAdd = new Worker(ID, fName, lName, phoneNum, null);
                 toAdd.setRoles(WorkersDatabase.getRoles(ID));
                 workers.add(toAdd);
             }

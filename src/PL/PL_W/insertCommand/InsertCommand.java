@@ -34,7 +34,7 @@ public class InsertCommand implements Command {
         System.out.println("4 - Schedule a worker to a shift");
         System.out.println("5 - Insert a new role to the system");
         System.out.println("6 - Insert a new Role for a worker");
-        System.out.println("7 - Return to main menu");
+        System.out.println("7 - Return to previous menu");
     }
 
 

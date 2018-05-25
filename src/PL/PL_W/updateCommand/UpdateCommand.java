@@ -26,6 +26,6 @@ public class UpdateCommand implements Command {
     private void userManual(){
         System.out.println("1 - Update a worker's details");
         System.out.println("2 - Update a worker's bank account");
-        System.out.println("3 - Return to main menu");
+        System.out.println("3 - Return to previous menu");
     }
 }

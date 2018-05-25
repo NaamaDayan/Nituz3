@@ -26,6 +26,10 @@ public class RetrieveLicenseForDriver extends Functor{
                 System.out.println("driver does not exist");
                 return;
             }
+            else if (!driver.isDriver()) {
+                System.out.println("selected worker is not driver");
+                return;
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -28,6 +28,6 @@ public class SelectCommand implements Command {
         System.out.println("1 - select available workers for a desired shift");
         System.out.println("2 - select workers assigned to a desired shift");
         System.out.println("3 - select worker by ID");
-        System.out.println("4 - Return to main menu");
+        System.out.println("4 - Return to previous menu");
     }
 }
