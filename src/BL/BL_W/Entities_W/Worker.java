@@ -13,32 +13,36 @@ public class Worker {
     private Date employmentDate;
     private BankAccount bankAccount;
     private List<Role> roles;
+    private String phoneNumber;
 
-    public Worker(String id, String fname, String lname, Date employmentDate) {
+    public Worker(String id, String fname, String lname, String phoneNumber ,Date employmentDate) {
         this.id = id;
         this.fname = fname;
         this.lname = lname;
         this.employmentDate = employmentDate;
         this.bankAccount = null;
         this.roles = new ArrayList<>();
+        this.phoneNumber = phoneNumber;
     }
 
-    public Worker(String id, String fname, String lname, Date employmentDate, BankAccount bankAccount) {
+    public Worker(String id, String fname, String lname, Date employmentDate, String phoneNumber , BankAccount bankAccount) {
         this.id = id;
         this.fname = fname;
         this.lname = lname;
         this.employmentDate = employmentDate;
         this.bankAccount = bankAccount;
         this.roles = new ArrayList<>();
+        this.phoneNumber = phoneNumber;
     }
 
-    public Worker(String id, String fname, String lname, Date employmentDate, BankAccount bankAccount, List<Role> roles) {
+    public Worker(String id, String fname, String lname, Date employmentDate, String phoneNumber ,BankAccount bankAccount, List<Role> roles) {
         this.id = id;
         this.fname = fname;
         this.lname = lname;
         this.employmentDate = employmentDate;
         this.bankAccount = bankAccount;
         this.roles = roles;
+        this.phoneNumber = phoneNumber;
     }
 
     public void setBankAccount(BankAccount bankAccount) {

@@ -1,137 +1,17 @@
 package DAL.DAL_W;
 
-import BL.BL_W.Entities_W.BankAccount;
-import BL.BL_W.Entities_W.Role;
-import BL.BL_W.Entities_W.Shift;
-import BL.BL_W.Entities_W.Worker;
+import BL.BL_T.Entities.Place;
+import BL.BL_W.Entities_W.*;
 
 import java.io.File;
 import java.sql.*;
 import java.sql.Date;
 import java.util.*;
 
+import static DAL.Tables.openConnection;
+
 public class WorkersDatabase {
     private static final String databaseName = "WorkersModule.db";
-
-    public static void createDatabase() {
-        try (Connection connection = openConnection()) {
-            createWorkers(connection);
-            createBankAccounts(connection);
-            createRoles(connection);
-            createShifts(connection);
-            createWorkersRoles(connection);
-            createAvailableShifts(connection);
-            createWorkersShifts(connection);
-        } catch (SQLException e) {
-            e.getMessage();
-        }
-    }
-
-    public static void createWorkers(Connection connection) {
-        try (Statement statement = connection.createStatement()) {
-            String sql = "CREATE TABLE Workers " +
-                    "(ID             TEXT    PRIMARY KEY     NOT NULL," +
-                    " FName          TEXT    NOT NULL, " +
-                    " LName          TEXT    NOT NULL, " +
-                    " EmploymentDate    DATE); ";
-            statement.executeUpdate(sql);
-        } catch (SQLException e) {
-        }
-    }
-
-    public static void createShifts(Connection connection) {
-        try (Statement statement = connection.createStatement()) {
-            String sql = "CREATE TABLE Shifts" +
-                    "(ShiftDate     DATE    NOT NULL, " +
-                    "ShiftDayPart   TEXT    NOT NULL, " +
-                    "PRIMARY KEY (ShiftDate , ShiftDayPart));";
-            statement.executeUpdate(sql);
-        } catch (SQLException e) {
-        }
-    }
-
-    public static void createRoles(Connection connection) {
-        try (Statement statement = connection.createStatement()) {
-            String sql = "CREATE TABLE Roles" +
-                    "(RoleID    INTEGER     PRIMARY KEY   AUTOINCREMENT," +
-                    "RoleName   TEXT    NOT NULL  UNIQUE);";
-            statement.executeUpdate(sql);
-        } catch (SQLException e) {
-        }
-    }
-
-    public static void createBankAccounts(Connection connection) {
-        try (Statement statement = connection.createStatement()) {
-            String sql = "CREATE TABLE BankAccounts" +
-                    "(WorkerID  Text PRIMARY KEY    NOT NULL, " +
-                    "BankCode   Text    NOT NULL, " +
-                    "BranchNumber  Text    NOT NULL," +
-                    "AccountNumber   Text    NOT NULL," +
-                    "FOREIGN KEY (WorkerID) REFERENCES Workers(ID)); ";
-            statement.executeUpdate(sql);
-        } catch (SQLException e) {
-        }
-    }
-
-    public static void createWorkersRoles(Connection connection) {
-        try (Statement statement = connection.createStatement()) {
-            String sql = "CREATE TABLE WorkersRoles" +
-                    "(WorkerID Text     NOT NULL, " +
-                    "Role   INTEGER        NOT NULL, " +
-                    "PRIMARY KEY (WorkerID , Role)," +
-                    "FOREIGN KEY (WorkerID) REFERENCES Workers(ID) ON DELETE CASCADE, " +
-                    "FOREIGN KEY (Role) REFERENCES Roles(RoleID) ON DELETE CASCADE ); ";
-            statement.executeUpdate(sql);
-        } catch (SQLException e) {
-        }
-    }
-
-    public static void createAvailableShifts(Connection connection) {
-        try (Statement statement = connection.createStatement()) {
-            String sql = "CREATE TABLE WorkersAvailableShifts" +
-                    "(WorkerID  Text     NOT NULL, " +
-                    "DateAvailable    DATE   NOT NULL, " +
-                    "DayPart   Text    NOT NULL, " +
-                    "PRIMARY KEY (WorkerID , DateAvailable , DayPart)," +
-                    "FOREIGN KEY (WorkerID) REFERENCES Workers(ID) ON DELETE CASCADE," +
-                    "FOREIGN KEY (DateAvailable,DayPart) REFERENCES Shifts(ShiftDate,ShiftDayPart) ON DELETE CASCADE ); ";
-            statement.executeUpdate(sql);
-        } catch (SQLException e) {
-        }
-    }
-
-    public static void createWorkersShifts(Connection connection) {
-        try (Statement statement = connection.createStatement()) {
-            String sql = "CREATE TABLE WorkersShifts" +
-                    "(WorkerID  Text    NOT NULL, " +
-                    "ShiftDate  DATE    NOT NULL, " +
-                    "ShiftDayPart   Text    NOT NULL, " +
-                    "Role   INTEGER  NOT NULL," +
-                    "PRIMARY KEY (WorkerID , ShiftDate , ShiftDayPart)," +
-                    "FOREIGN KEY (Role) REFERENCES Roles(RoleID) ON DELETE CASCADE, " +
-                    "FOREIGN KEY (WorkerID , ShiftDate , ShiftDayPart) REFERENCES WorkersAvailableShifts(WorkerID , DateAvailable, DayPart) ON DELETE CASCADE );";
-            statement.executeUpdate(sql);
-        } catch (SQLException e) {
-        }
-    }
-
-    public static void openDatabase() {
-        File f = new File(databaseName);
-        if (!f.exists())
-            WorkersDatabase.createDatabase();
-    }
-
-    public static Connection openConnection() {
-        Connection connection = null;
-        try {
-            Class.forName("org.sqlite.JDBC");
-            connection = DriverManager.getConnection("jdbc:sqlite:" + databaseName);
-            connection.createStatement().execute("PRAGMA foreign_keys = ON");
-        } catch (Exception e) {
-            System.exit(0);
-        }
-        return connection;
-    }
 
     public static boolean insertWorker(Worker worker) {
         String workersSql = "Insert INTO Workers (ID , FName , LName , EmploymentDate) " +
@@ -162,7 +42,7 @@ public class WorkersDatabase {
 
     // TODO: 26/04/18 change
     public static Worker getWorker(String id) {
-        String sql = "SELECT W.FName, W.LNAME, W.EmploymentDate, BA.BankCode, BA.AccountNumber" +
+        String sql = "SELECT W.FName, W.LNAME, W.EmploymentDate, W.PhoneNumber ,BA.BankCode, BA.AccountNumber" +
                 ", BA.BranchNumber FROM Workers AS W,BankAccounts AS BA " +
                 " WHERE  W.ID=BA.WorkerID AND W.ID=?";
         try (Connection connection = openConnection();
@@ -179,7 +59,8 @@ public class WorkersDatabase {
                 String accountNumber = rs.getString("AccountNumber");
                 String branchNumber = rs.getString("BranchNumber");
                 List<Role> roles = getRoles(id);
-                return new Worker(id, fName, lName, employmentDate, new BankAccount(bankCode, accountNumber, branchNumber), roles);
+                String phoneNumber = rs.getString("PhoneNumber");
+                return new Worker(id, fName, lName, employmentDate, phoneNumber ,new BankAccount(bankCode, accountNumber, branchNumber), roles);
             }
         } catch (SQLException e) {
         }
@@ -188,7 +69,7 @@ public class WorkersDatabase {
 
 
     public static List<Role> getRoles(String id) {
-        String sql = "SELECT R.RoleName FROM Roles AS R INNER JOIN WorkersRoles AS WR WHERE " +
+        String sql = "SELECT R.RoleName , R.RoleDescription FROM Roles AS R INNER JOIN WorkersRoles AS WR WHERE " +
                 "R.RoleID=WR.Role AND WR.WorkerID=?";
         try (Connection connection = openConnection();
              PreparedStatement pstmt = connection.prepareStatement(sql)) {
@@ -207,7 +88,8 @@ public class WorkersDatabase {
             if (!rs.isBeforeFirst()) return workerRoles;
             while (rs.next()) {
                 String roleName = rs.getString("RoleName");
-                workerRoles.add(new Role(roleName));
+                String roleDesc = rs.getString("RoleDescription");
+                workerRoles.add(new Role(roleName , roleDesc));
             }
         } catch (SQLException e) {
         }
@@ -342,7 +224,7 @@ public class WorkersDatabase {
     }
 
     public static Map<Worker, Role> selectAssignedWorkers(Shift shift) {
-        String sql = "SELECT W.ID, W.FName, W.LName, R.RoleName FROM Workers AS W " +
+        String sql = "SELECT W.ID, W.FName, W.LName, W.PhoneNumber ,R.RoleName R.RoleDescription FROM Workers AS W " +
                 "INNER JOIN WorkersShifts AS WS INNER JOIN WorkersRoles as WR INNER JOIN Roles AS R " +
                 " WHERE W.ID = WS.WorkerID AND WS.WorkerID=WR.WorkerID AND WS.Role=WR.Role AND WR.Role=R.RoleID" +
                 " AND ShiftDate=? AND ShiftDayPart=?";
@@ -357,6 +239,7 @@ public class WorkersDatabase {
         }
     }
 
+    // TODO: 25/05/2018 add the employment date
     private static Map<Worker, Role> mappingRSForShifts(ResultSet resultSet) {
         ResultSet rs = resultSet;
         Map<Worker, Role> data = new HashMap<>();
@@ -367,7 +250,9 @@ public class WorkersDatabase {
                 String fName = rs.getString("FName");
                 String lName = rs.getString("LName");
                 String role = rs.getString("RoleName");
-                data.put(new Worker(ID, fName, lName, null), new Role(role));
+                String roleDesc = rs.getString("RoleDescription");
+                String phoneNumber = rs.getString("PhoneNumber");
+                data.put(new Worker(ID, fName, lName, phoneNumber , null), new Role(role , roleDesc));
             }
 
         } catch (SQLException e) {
@@ -378,7 +263,7 @@ public class WorkersDatabase {
 
 
     public static List<Worker> selectAvailableWorkers(Shift shift) {
-        String sql = "SELECT W.ID, W.FName, W.LName FROM Workers AS W " +
+        String sql = "SELECT W.ID, W.FName, W.LName, W.PhoneNumber FROM Workers AS W " +
                 "INNER JOIN WorkersAvailableShifts AS WAS " +
                 "WHERE W.ID = WAS.WorkerID " +
                 " AND WAS.DateAvailable=? AND WAS.DayPart=? ";
@@ -403,7 +288,8 @@ public class WorkersDatabase {
                 String ID = resultSet.getString("ID");
                 String fName = resultSet.getString("FName");
                 String lName = resultSet.getString("LName");
-                Worker toAdd = new Worker(ID, fName, lName, null);
+                String phoneNumber = resultSet.getString("PhoneNumber");
+                Worker toAdd = new Worker(ID, fName, lName, phoneNumber ,null);
                 toAdd.setRoles(WorkersDatabase.getRoles(ID));
                 workers.add(toAdd);
             }
@@ -414,12 +300,13 @@ public class WorkersDatabase {
     }
 
 
-    public static boolean insertShift(Shift s) {
-        String sql = "INSERT INTO Shifts (ShiftDate, ShiftDayPart) Values (? , ?)";
+    public static boolean insertShift(Place p , Shift s) {
+        String sql = "INSERT INTO Shifts (PlaceId ,ShiftDate, ShiftDayPart) Values (? , ? , ?)";
         try (Connection connection = openConnection();
              PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setDate(1, s.getDate());
             pstmt.setString(2, s.getShiftDayPart().toString());
+            pstmt.setString(3 , p.getId());
             pstmt.executeUpdate();
             return true;
         } catch (SQLException e) {
@@ -430,12 +317,12 @@ public class WorkersDatabase {
 
     public static List<Role> selectAllRoles() {
         List<Role> allRoles = new LinkedList<>();
-        String sql = "Select RoleID , RoleName From Roles";
+        String sql = "Select RoleID , RoleName , RoleDescription From Roles";
         try (Connection connection = openConnection();
              PreparedStatement pstmt = connection.prepareStatement(sql)) {
             ResultSet resultSet = pstmt.executeQuery();
             while (resultSet.next()) {
-                Role r = new Role(resultSet.getString("RoleName"));
+                Role r = new Role(resultSet.getString("RoleName") , resultSet.getString("RoleDescription"));
                 allRoles.add(r);
             }
             return allRoles;
@@ -445,10 +332,11 @@ public class WorkersDatabase {
     }
 
     public static boolean insertRole(Role role) {
-        String sql = "INSERT INTO Roles (RoleName) Values (?)";
+        String sql = "INSERT INTO Roles (RoleName , RoleDescription) Values (? , ?)";
         try (Connection connection = openConnection();
              PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setString(1, role.getRole());
+            pstmt.setString(2 , role.getDescription());
             pstmt.executeUpdate();
             return true;
         } catch (SQLException e) {
@@ -493,15 +381,16 @@ public class WorkersDatabase {
         }
     }
 
-    public static boolean scheduleWorker(Shift newShift, Worker worker, Role role) {
+    public static boolean scheduleWorker(Place place , Shift newShift, Worker worker, Role role) {
         int roleID = getRoleIDByName(role.getRole());
-        String sql = "INSERT INTO WorkersShifts (WorkerID , ShiftDate, ShiftDayPart , Role) Values (? , ? , ? , ?)";
+        String sql = "INSERT INTO WorkersShifts (WorkerID , ShiftDate ,ShiftDayPart , Role, PlaceId) Values (? , ? , ? , ?, ?)";
         try (Connection connection = openConnection();
              PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setString(1, worker.getId());
             pstmt.setDate(2, newShift.getDate());
             pstmt.setString(3, newShift.getShiftDayPart().toString());
             pstmt.setInt(4, roleID);
+            pstmt.setString(5 , place.getId());
             pstmt.execute();
             return true;
         } catch (SQLException e) {
@@ -523,13 +412,14 @@ public class WorkersDatabase {
         }
     }
 
-    public static boolean isWorkerAssignedForShift(Worker worker, Shift shift) {
-        String sql = "SELECT * FROM WorkersShifts WHERE WorkerID=? AND ShiftDate=? AND ShiftDayPart=?";
+    public static boolean isWorkerAssignedForShift(Place place ,Worker worker, Shift shift) {
+        String sql = "SELECT * FROM WorkersShifts WHERE PlaceId = ? AND WorkerID=? AND ShiftDate=? AND ShiftDayPart=?";
         try (Connection connection = openConnection();
              PreparedStatement pstmt = connection.prepareStatement(sql)) {
-            pstmt.setString(1, worker.getId());
-            pstmt.setDate(2, shift.getDate());
-            pstmt.setString(3, shift.getShiftDayPart().toString());
+            pstmt.setString(1 , place.getId());
+            pstmt.setString(2, worker.getId());
+            pstmt.setDate(3, shift.getDate());
+            pstmt.setString(4, shift.getShiftDayPart().toString());
             return pstmt.executeQuery().isBeforeFirst();
         } catch (SQLException e) {
             return false;

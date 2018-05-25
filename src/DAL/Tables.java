@@ -1,5 +1,6 @@
 package DAL;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -43,6 +44,12 @@ public class Tables {
             System.exit(0);
         }
         return connection;
+    }
+
+    public static void openDatabase() {
+        File f = new File(databaseName);
+        if (!f.exists())
+            createDatabase();
     }
 
 
@@ -161,9 +168,9 @@ public class Tables {
         try (Statement statement = connection.createStatement()) {
             String sql = "CREATE TABLE Workers " +
                     "(ID             TEXT    PRIMARY KEY     NOT NULL," +
-                    " PhoneNumber          TEXT    NOT NULL, " +
                     " FName          TEXT    NOT NULL, " +
                     " LName          TEXT    NOT NULL, " +
+                    " PhoneNumber          TEXT    NOT NULL, " +
                     " EmploymentDate    DATE); ";
             statement.executeUpdate(sql);
         } catch (SQLException e) {
