@@ -11,7 +11,6 @@ public class InsertChoice extends Functor {
 
     enum insertFunctions {
         InsertTruck,
-        InsertDriver,
         InsertLicense,
         InsertDelivery,
         InsertPlace,
@@ -23,7 +22,7 @@ public class InsertChoice extends Functor {
     @Override
     public void execute() throws ParseException {
         Functor insertFuncs[] = fillInsertFunctions();
-        System.out.println("Enter:\n 1 to insert Truck\n 2 to insert driver\n 3 to insert license\n 4 to insert delivery \n 5 to insert place\n 6 to insert license for driver\n 7 to insert delivery destination\n 8 to insert truck model\n 9 for main menu");
+        System.out.println("Enter:\n 1 to insert Truck\n 2 to insert license\n 3 to insert delivery \n 4 to insert place\n 5 to insert license for driver\n 6 to insert delivery destination\n 7 to insert truck model\n 8 for main menu");
         int insertChoice = reader.nextInt();
         insertChoice = Main.rangeCheck(1, 9, insertChoice);
         if (insertChoice == 9)

@@ -1,5 +1,5 @@
 package PL.PL_T.insertHandlers;
-
+/*
 
 import BL.BL_T.EntitiyFunctions.DriverFunctions;
 import PL.PL_T.Functor;
@@ -32,4 +32,4 @@ public class InsertDriver extends Functor{
         Driver driver = new Driver(driverId, firstName, lastName, phoneNumber, new LinkedList<>());
         DriverFunctions.insertDriver(driver);
     }
-}
+}*/

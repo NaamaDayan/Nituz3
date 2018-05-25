@@ -1,9 +1,10 @@
 package PL.PL_T.updateHandlers;
 
 import BL.BL_T.Entities.Delivery;
-import BL.BL_T.Entities.Driver;
 import BL.BL_T.Entities.Truck;
 import BL.BL_T.EntitiyFunctions.*;
+import BL.BL_W.Entities_W.Worker;
+import BL.BL_W.WorkerLogic;
 import PL.PL_T.Functor;
 import PL.PL_T.Utils;
 import PL.PL_T.insertHandlers.InsertDeliveryDestination;
@@ -71,8 +72,9 @@ public class UpdateDelivery extends Functor {
         if (Utils.boolQuery("update driver? y/n")) {
             System.out.println("enter driver id");
             String driverId = reader.next();
+            Worker driver = WorkerLogic.getWorker(driverId);
             try {
-                if (!DriverFunctions.isExist(driverId)){
+                if (driver == null){
                     System.out.println("driver does not exist");
                     return;
                 }
@@ -80,7 +82,6 @@ public class UpdateDelivery extends Functor {
                 System.out.println("error: insertion failed");
                 return;
             }
-            Driver driver = DriverFunctions.retrieveDriver(driverId);
             if (!DeliveryFunctions.isDriverSuitableForTruck(driver, truck)){
                 System.out.println("driver cannot drive this truck!");
                 return;

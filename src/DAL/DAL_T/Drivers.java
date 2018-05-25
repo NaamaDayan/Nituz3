@@ -1,6 +1,6 @@
 package DAL.DAL_T;
 
-import BL.BL_T.Entities.Driver;
+/*import BL.BL_T.Entities.Driver;
 import BL.BL_T.Entities.LicenseTypeForTruck;
 
 import java.sql.*;
@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Drivers {
 
-    /*public static void insertDriver(String id, String firstName, String lastName, String phoneNumber){
+    public static void insertDriver(String id, String firstName, String lastName, String phoneNumber){
         try (Connection conn = Utils.openConnection()) {
             String query = "INSERT INTO Drivers VALUES (?, ?, ? ,?)  ";
             PreparedStatement stmt = conn.prepareStatement(query);
@@ -79,7 +79,7 @@ public class Drivers {
         String phoneNumber = rs.getString("PHONE_NUMBER");
         List<LicenseTypeForTruck> licenses = DriversLicenses.retrieveDriverLicenses(id);
         return new Driver(id, firstName, lastName, phoneNumber, licenses);
-    }*/
+    }
 
 
-}
+}*/

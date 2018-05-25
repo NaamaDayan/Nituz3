@@ -3,10 +3,13 @@ package PL.PL_T.insertHandlers;
 
 import BL.BL_T.Entities.*;
 import BL.BL_T.EntitiyFunctions.*;
+import BL.BL_W.Entities_W.Shift;
 import BL.BL_W.Entities_W.Worker;
+import BL.BL_W.ShiftLogic;
 import BL.BL_W.WorkerLogic;
 import PL.PL_T.Functor;
 
+import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.LinkedList;
@@ -44,6 +47,24 @@ public class InsertDelivery extends Functor{
             System.out.println("error: insertion failed");
             return;
         }
+        // TODO: 25/05/2018 add store keeper constrain (N)
+        try {
+            Time morning = new Time(new Time(Hourformat.parse("04:00").getTime()).getTime());
+            Time evening = new Time(new Time(Hourformat.parse("15:59").getTime()).getTime());
+            String shiftDayPart;
+        if (leavingHour.before(morning) && leavingHour.after(evening))
+            shiftDayPart = "Evening";
+        else
+            shiftDayPart = "Morning";
+        Shift.ShiftDayPart enumShiftDayPart = Shift.getDayPartByName(shiftDayPart);;
+        Shift.ShiftDayPart temp = Shift.getDayPartByName(shiftDayPart);
+        Shift shift = new Shift(leavingDate, enumShiftDayPart);
+            System.out.println("shift day part: "+ shiftDayPart);
+        if (!ShiftLogic.isStoreKeeperExistInShift(shift)){
+            System.out.println("There is no available store keeper at this hour");
+            return;
+        }
+
         System.out.println("enter truck id");
         String truckId = reader.next();
         try {
@@ -70,6 +91,11 @@ public class InsertDelivery extends Functor{
         }
         if (!DeliveryFunctions.isDriverSuitableForTruck(driver, truck)){
             System.out.println("driver cannot drive this truck!");
+            return;
+        }
+            // TODO: 25/05/2018 add driver in shift constrain (N)
+        if(!ShiftLogic.isWorkerAssignedForShift(driver, shift)){
+            System.out.println("driver is not register to a shift in the given date");
             return;
         }
         System.out.println("enter source id");
@@ -99,6 +125,9 @@ public class InsertDelivery extends Functor{
         } catch (Exception e) {
             System.out.println("error: insertion failed");
             return;
+        }
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
     }
 }
