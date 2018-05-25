@@ -6,7 +6,7 @@ import BL.BL_T.Entities.Place;
 import BL.BL_T.EntitiyFunctions.DeliveryDestinationFunctions;
 import BL.BL_T.EntitiyFunctions.DeliveryFunctions;
 import BL.BL_T.EntitiyFunctions.PlaceFunctions;
-import PL.PL_T.Functor;
+import PL.Functor;
 import PL.PL_T.Utils;
 
 import java.text.ParseException;

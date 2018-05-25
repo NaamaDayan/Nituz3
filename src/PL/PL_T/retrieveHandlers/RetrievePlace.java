@@ -2,7 +2,7 @@ package PL.PL_T.retrieveHandlers;
 
 import BL.BL_T.Entities.Place;
 import BL.BL_T.EntitiyFunctions.PlaceFunctions;
-import PL.PL_T.Functor;
+import PL.Functor;
 
 import java.util.Scanner;
 

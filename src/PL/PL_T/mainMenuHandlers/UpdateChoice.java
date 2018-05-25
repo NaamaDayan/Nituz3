@@ -1,7 +1,7 @@
 package PL.PL_T.mainMenuHandlers;
 
-import PL.PL_T.Functor;
-import PL.PL_T.Main;
+import PL.Functor;
+import PL.MainMenus.TransportsMainMenu;
 
 import java.text.ParseException;
 import java.util.Scanner;
@@ -23,7 +23,7 @@ public class UpdateChoice extends Functor {
         Functor updateFuncs[] = fillUpdateFunctions();
         System.out.println("Enter:\n 1 to update Truck\n 2 to update driver\n 3 to update license\n 4 to update delivery \n 5 to update place \n 6 to update truck model\n 7 for main menu");
         int updateChoice = reader.nextInt();
-        updateChoice = Main.rangeCheck(1, 7, updateChoice);
+        updateChoice = TransportsMainMenu.rangeCheck(1, 7, updateChoice);
         if (updateChoice == 7)
             return;
         updateFuncs[updateChoice-1].execute();

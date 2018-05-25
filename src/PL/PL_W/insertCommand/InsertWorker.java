@@ -3,7 +3,7 @@ package PL.PL_W.insertCommand;
 import BL.BL_W.WorkerLogic;
 import BL.BL_W.Entities_W.BankAccount;
 import BL.BL_W.Entities_W.Worker;
-import utils_W.Command;
+import PL.PL_W.Command;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

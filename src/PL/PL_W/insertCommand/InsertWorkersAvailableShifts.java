@@ -4,7 +4,7 @@ import BL.BL_W.ShiftLogic;
 import BL.BL_W.WorkerLogic;
 import BL.BL_W.Entities_W.Shift;
 import BL.BL_W.Entities_W.Worker;
-import utils_W.Command;
+import PL.PL_W.Command;
 
 import java.sql.SQLException;
 import java.text.ParseException;

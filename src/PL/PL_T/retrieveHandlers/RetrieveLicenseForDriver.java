@@ -2,9 +2,9 @@ package PL.PL_T.retrieveHandlers;
 
 import BL.BL_T.Entities.LicenseTypeForTruck;
 import BL.BL_T.EntitiyFunctions.DriverLicenseFunctions;
-import BL.BL_W.Entities_W.Worker;
 import BL.BL_W.WorkerLogic;
-import PL.PL_T.Functor;
+import BL.BL_W.Entities_W.Worker;
+import PL.Functor;
 
 import java.util.List;
 import java.util.Scanner;

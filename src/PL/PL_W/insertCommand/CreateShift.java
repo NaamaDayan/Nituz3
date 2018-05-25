@@ -2,7 +2,7 @@ package PL.PL_W.insertCommand;
 
 import BL.BL_W.ShiftLogic;
 import BL.BL_W.Entities_W.Shift;
-import utils_W.Command;
+import PL.PL_W.Command;
 
 import java.sql.SQLException;
 import java.text.ParseException;

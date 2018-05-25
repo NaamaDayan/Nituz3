@@ -3,7 +3,7 @@ package PL.PL_W.removeCommand;
 import BL.BL_W.ShiftLogic;
 import BL.BL_W.WorkerLogic;
 import BL.BL_W.Entities_W.Worker;
-import utils_W.Command;
+import PL.PL_W.Command;
 
 public class RemoveActualShift extends RemoveShift implements Command{
 

@@ -2,9 +2,9 @@ package PL.PL_T.updateHandlers;
 
 import BL.BL_T.Entities.Place;
 import BL.BL_T.EntitiyFunctions.PlaceFunctions;
-import BL.BL_W.Entities_W.Worker;
+import PL.Functor;
 import BL.BL_W.WorkerLogic;
-import PL.PL_T.Functor;
+import BL.BL_W.Entities_W.Worker;
 import PL.PL_T.Utils;
 
 import java.util.Scanner;

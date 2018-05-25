@@ -1,5 +1,6 @@
-package PL.PL_T;
+package PL;
 import DAL.Tables;
+import PL.Functor;
 
 import java.text.ParseException;
 import java.util.Scanner;
@@ -9,10 +10,8 @@ public class Main {
 
     //---enum with handlers names
     enum mainMenuFunctions {
-        InsertChoice,
-        UpdateChoice,
-        RetrieveChoice,
-        RemoveChoice
+        WorkersMainMenu,
+        TransportsMainMenu
     }
 
     public static void main(String[] args) throws ParseException {
@@ -22,22 +21,16 @@ public class Main {
 
     private static void programFlow() throws ParseException {
         System.out.println("Welcome!");
-        System.out.println("Enter:\n 1 to insert data\n 2 to update data\n 3 to retrieve data\n 4 to remove data\n 5 to exit");
-        int choice = reader.nextInt();
-        boolean cont = true;
         Functor choiceFuncs[] = fillChoiceFunctions();
-        while (cont) {
-            choice = rangeCheck(1, 5, choice); //after this the choice is legal
-            if (choice == 5) {
+        while (true) {
+            System.out.println("Enter:\n 1 to Workers Main Menu\n 2 to Transports Main Menu\n 3 to exit");
+            int choice = reader.nextInt();
+            choice = rangeCheck(1, 3, choice); //after this the choice is legal
+            if (choice == 3) {
                 System.out.println("Bye!");
-                cont = false;
                 break;
             }
             choiceFuncs[choice - 1].execute();
-            if (cont) {
-                System.out.println("Enter:\n 1 to insert data\n 2 to update data\n 3 to retrieve data\n 4 to remove data\n 5 to exit");
-                choice = reader.nextInt();
-            }
         }
     }
 
@@ -47,7 +40,7 @@ public class Main {
         Class funcClass;
         try {
             for (int i = 0; i < funcsArr.length; i++) {
-                funcClass = Class.forName("PL.PL_T.mainMenuHandlers."+ mainMenuFunctions.values()[i].name()); //gets the name of the function
+                funcClass = Class.forName("PL.MainMenus."+ mainMenuFunctions.values()[i].name()); //gets the name of the function
                 funcsArr[i] = (Functor)funcClass.newInstance(); //creates instance
             }
         }

@@ -2,7 +2,7 @@ package PL.PL_T.retrieveHandlers;
 
 import BL.BL_T.Entities.Delivery;
 import BL.BL_T.EntitiyFunctions.DeliveryFunctions;
-import PL.PL_T.Functor;
+import PL.Functor;
 
 import java.util.Scanner;
 

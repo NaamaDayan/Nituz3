@@ -3,9 +3,9 @@ package PL.PL_T.updateHandlers;
 import BL.BL_T.Entities.Delivery;
 import BL.BL_T.Entities.Truck;
 import BL.BL_T.EntitiyFunctions.*;
-import BL.BL_W.Entities_W.Worker;
+import PL.Functor;
 import BL.BL_W.WorkerLogic;
-import PL.PL_T.Functor;
+import BL.BL_W.Entities_W.Worker;
 import PL.PL_T.Utils;
 import PL.PL_T.insertHandlers.InsertDeliveryDestination;
 

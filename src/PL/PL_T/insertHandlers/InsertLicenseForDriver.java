@@ -3,9 +3,9 @@ package PL.PL_T.insertHandlers;
 import BL.BL_T.Entities.LicenseTypeForTruck;
 import BL.BL_T.EntitiyFunctions.DriverLicenseFunctions;
 import BL.BL_T.EntitiyFunctions.LicenseTypeForTruckFunctions;
+import PL.Functor;
 import BL.BL_W.Entities_W.Worker;
 import BL.BL_W.WorkerLogic;
-import PL.PL_T.Functor;
 
 import java.util.Scanner;
 

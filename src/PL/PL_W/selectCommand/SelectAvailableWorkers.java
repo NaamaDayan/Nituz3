@@ -2,8 +2,8 @@ package PL.PL_W.selectCommand;
 
 import BL.BL_W.ShiftLogic;
 import BL.BL_W.Entities_W.Worker;
-import utils_W.Command;
-import utils_W.Utils;
+import PL.PL_W.Command;
+import PL.PL_W.Utils;
 
 import java.sql.SQLException;
 import java.util.List;

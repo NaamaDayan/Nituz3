@@ -2,7 +2,7 @@ package PL.PL_T.insertHandlers;
 /*
 
 import BL.BL_T.EntitiyFunctions.DriverFunctions;
-import PL.PL_T.Functor;
+import PL.Functor;
 
 import java.util.LinkedList;
 import java.util.Scanner;

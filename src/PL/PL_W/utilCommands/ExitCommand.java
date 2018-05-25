@@ -1,5 +1,5 @@
 package PL.PL_W.utilCommands;
-import utils_W.Command;
+import PL.PL_W.Command;
 public class ExitCommand implements Command{
     @Override
     public void execute() {

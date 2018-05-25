@@ -7,7 +7,7 @@ import BL.BL_W.Entities_W.Shift;
 import BL.BL_W.Entities_W.Worker;
 import BL.BL_W.ShiftLogic;
 import BL.BL_W.WorkerLogic;
-import PL.PL_T.Functor;
+import PL.Functor;
 
 import java.sql.Time;
 import java.text.ParseException;

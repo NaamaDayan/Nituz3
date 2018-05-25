@@ -2,12 +2,13 @@ package PL.PL_W.updateCommand;
 
 import BL.BL_W.WorkerLogic;
 import BL.BL_W.Entities_W.Worker;
-import utils_W.Utils;
+import PL.PL_W.Command;
+import PL.PL_W.Utils;
 
 
 import java.util.Scanner;
 
-public class UpdateBankAccount implements utils_W.Command {
+public class UpdateBankAccount implements Command {
     static Scanner reader = new Scanner(System.in);
 
 
