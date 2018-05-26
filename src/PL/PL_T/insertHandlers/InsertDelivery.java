@@ -55,15 +55,21 @@ public class InsertDelivery extends Functor{
             shiftDayPart = "Evening";
         else
             shiftDayPart = "Morning";
-        Shift.ShiftDayPart enumShiftDayPart = Shift.getDayPartByName(shiftDayPart);;
+        Shift.ShiftDayPart enumShiftDayPart = Shift.getDayPartByName(shiftDayPart);
         Shift.ShiftDayPart temp = Shift.getDayPartByName(shiftDayPart);
-        Shift shift = new Shift(leavingDate, enumShiftDayPart);
-            System.out.println("shift day part: "+ shiftDayPart);
-        if (!ShiftLogic.isStoreKeeperExistInShift(shift)){
-            System.out.println("There is no available store keeper at this hour");
+        System.out.println("shift day part: "+ shiftDayPart);
+        System.out.println("enter source id");
+        String placeId = reader.next();
+        if (!PlaceFunctions.isExist(placeId)){
+            System.out.println("place does not exist");
             return;
         }
-
+        Place place = PlaceFunctions.retrievePlace(placeId);
+        Shift shift = new Shift(leavingDate, enumShiftDayPart, place);
+        if (!PlaceFunctions.isPlaceHasShiftInSpecifiedTime(place, enumShiftDayPart, leavingDate)) {
+            System.out.println("there is no such shift in the specified place");
+            return;
+        }
         System.out.println("enter truck id");
         String truckId = reader.next();
         try {
@@ -100,18 +106,6 @@ public class InsertDelivery extends Functor{
             System.out.println("driver is not register to a shift in the given date");
             return;
         }
-        System.out.println("enter source id");
-        String placeId = reader.next();
-        try {
-            if (!PlaceFunctions.isExist(placeId)){
-                System.out.println("place does not exist");
-                return;
-            }
-        Place place = PlaceFunctions.retrievePlace(placeId);
-        if (!PlaceFunctions.isShiftExistInPlace(place, shift)) {
-            System.out.println("there is no such shift in the specified place");
-            return;
-        }
         if (!WorkerLogic.isWorkerAvailableForShift(driver, shift)) {
             System.out.println("the driver is not available for the shift");
             return;
@@ -126,7 +120,7 @@ public class InsertDelivery extends Functor{
             return;
         }
         Place destPlace = PlaceFunctions.retrievePlace(firstDest);
-        if (!PlaceFunctions.isShiftExistInPlace(destPlace, shift)) {
+        if (!PlaceFunctions.isPlaceHasShiftInSpecifiedTime(destPlace, enumShiftDayPart, leavingDate)) {
             System.out.println("there is no such shift in the specified place");
             DeliveryFunctions.removeDelivery(deliveryId);
             return;
@@ -143,7 +137,7 @@ public class InsertDelivery extends Functor{
                 return;
             }
             destPlace = PlaceFunctions.retrievePlace(dest);
-            if (!PlaceFunctions.isShiftExistInPlace(destPlace, shift)) {
+            if (!PlaceFunctions.isPlaceHasShiftInSpecifiedTime(destPlace, enumShiftDayPart, leavingDate)) {
                 System.out.println("there is no such shift in the specified place");
                 DeliveryFunctions.removeDelivery(deliveryId);
                 return;
@@ -157,9 +151,6 @@ public class InsertDelivery extends Functor{
         } catch (Exception e) {
             System.out.println("error: insertion failed");
             return;
-        }
-        } catch (ParseException e) {
-            e.printStackTrace();
         }
     }
 }

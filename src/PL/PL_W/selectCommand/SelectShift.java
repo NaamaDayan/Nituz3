@@ -1,5 +1,7 @@
 package PL.PL_W.selectCommand;
 
+import BL.BL_T.Entities.Place;
+import BL.BL_T.EntitiyFunctions.PlaceFunctions;
 import BL.BL_W.Entities_W.Shift;
 
 import java.text.ParseException;
@@ -26,7 +28,18 @@ public class SelectShift {
             System.out.println("Illegal input\n");
             return;
         }
-        desiredShift = new Shift(new java.sql.Date(d.getTime()), dayPart);
+        System.out.println("enter source id");
+        String placeId = reader.next();
+        try {
+            if (!PlaceFunctions.isExist(placeId)){
+                System.out.println("place does not exist");
+                return;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Place place = PlaceFunctions.retrievePlace(placeId);
+        desiredShift = new Shift(new java.sql.Date(d.getTime()), dayPart, place);
     }
 
 

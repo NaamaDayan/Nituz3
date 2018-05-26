@@ -34,8 +34,8 @@ public class PlaceFunctions {
         return ErrorsHandler.isPlaceExist(id);
     }
 
-    public static boolean isShiftExistInPlace(Place place, Shift shift) throws Exception {
-        return Places.isShiftExistInPlace(shift, place);
+    public static boolean isPlaceHasShiftInSpecifiedTime(Place place, Shift.ShiftDayPart dp, java.sql.Date date) throws Exception {
+        return Places.isPlaceHasShiftInSpecifiedTime(place, dp, date);
     }
 
 }

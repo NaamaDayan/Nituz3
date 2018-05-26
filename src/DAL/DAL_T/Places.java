@@ -76,7 +76,7 @@ public class Places {
         return new Place(id, address, phoneNumber, contact);
     }
 
-    public static boolean isShiftExistInPlace(Shift shift, Place place) {
+    public static boolean isPlaceHasShiftInSpecifiedTime(Place place, Shift.ShiftDayPart dp, java.sql.Date date) {
         throw new UnsupportedOperationException();
     }
 }

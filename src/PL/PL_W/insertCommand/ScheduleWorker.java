@@ -1,5 +1,7 @@
 package PL.PL_W.insertCommand;
 
+import BL.BL_T.Entities.Place;
+import BL.BL_T.EntitiyFunctions.PlaceFunctions;
 import BL.BL_W.RolesLogic;
 import BL.BL_W.ShiftLogic;
 import BL.BL_W.WorkerLogic;
@@ -38,7 +40,14 @@ public class ScheduleWorker implements Command {
                 System.out.println(sDayPart + "is not a valid day part\n");
                 return;
             }
-            Shift newShift = new Shift(new java.sql.Date(d.getTime()), shiftDayPart);
+            System.out.println("enter source id");
+            String placeId = reader.next();
+            if (!PlaceFunctions.isExist(placeId)){
+                System.out.println("place does not exist");
+                return;
+            }
+            Place place = PlaceFunctions.retrievePlace(placeId);
+            Shift newShift = new Shift(new java.sql.Date(d.getTime()), shiftDayPart, place);
             if (!ShiftLogic.shiftExists(newShift)) {
                 System.out.println("Shift does not exist, Please insert the shift before scheduling workers\n");
                 return;
@@ -75,6 +84,8 @@ public class ScheduleWorker implements Command {
         } catch (SQLException e) {
             System.out.println("Error while scheduling worker\n");
         } catch (IOException e) {
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
