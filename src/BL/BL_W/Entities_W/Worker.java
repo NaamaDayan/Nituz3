@@ -125,4 +125,8 @@ public class Worker {
         }
         return ret;
     }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 }

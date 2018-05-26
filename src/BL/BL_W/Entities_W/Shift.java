@@ -1,5 +1,7 @@
 package BL.BL_W.Entities_W;
 
+import BL.BL_T.Entities.Place;
+
 import java.sql.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -7,7 +9,7 @@ import java.util.List;
 public class Shift {
 
     private List<Worker> workers;
-
+    private Place place;
     private Date date;
 
     public enum ShiftDayPart {
@@ -26,13 +28,15 @@ public class Shift {
 
     ShiftDayPart shiftDayPart;
 
-    public Shift(Date date, ShiftDayPart shiftDayPart) {
+    public Shift(Date date, ShiftDayPart shiftDayPart , Place place) {
+        this.place = place;
         this.date = date;
         this.shiftDayPart = shiftDayPart;
         workers = new LinkedList<>();
     }
 
-    public Shift(Date date, ShiftDayPart shiftDayPart , List<Worker> workers) {
+    public Shift(Date date, ShiftDayPart shiftDayPart , List<Worker> workers , Place place) {
+        this.place = place;
         this.date = date;
         this.shiftDayPart = shiftDayPart;
         this.workers = workers;
@@ -67,4 +71,13 @@ public class Shift {
         return (this.date.toString().equals(other.date.toString()) && this.workers.equals(other.workers)
                 && this.shiftDayPart.name.equals(other.shiftDayPart.name));
     }
+
+    public Place getPlace() {
+        return place;
+    }
+
+    public void setPlace(Place place) {
+        this.place = place;
+    }
+
 }

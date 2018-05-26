@@ -10,6 +10,11 @@ public class Role {
         this.description = description;
     }
 
+    public Role(String role){
+        this.role = role;
+        this.description = "";
+    }
+
     public String getRole() {
         return role;
     }

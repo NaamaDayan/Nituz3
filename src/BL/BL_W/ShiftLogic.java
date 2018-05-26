@@ -4,7 +4,6 @@ import DAL.DAL_W.WorkersDatabase;
 import BL.BL_W.Entities_W.Role;
 import BL.BL_W.Entities_W.Shift;
 import BL.BL_W.Entities_W.Worker;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.sql.SQLException;
 import java.util.*;
@@ -50,6 +49,6 @@ public class ShiftLogic {
 
     //todo: implement this
     public static boolean isStoreKeeperExistInShift(Shift shift){
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 }
