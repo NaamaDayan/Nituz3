@@ -1,5 +1,8 @@
 package DAL;
 
+import DAL.DAL_W.WorkersDatabase;
+
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -11,7 +14,13 @@ import java.sql.Statement;
 public class Tables {
     private static final String databaseName = "WorkersAndTransports.db";
 
-    public static void createDatabase() {
+    public static void openDatabase() {
+        File f = new File(databaseName);
+        if (!f.exists())
+            createDatabase();
+    }
+
+    private static void createDatabase() {
         try (Connection connection = openConnection()) {
             createModelsTable(connection);
             createTrucksTable(connection);
@@ -40,7 +49,7 @@ public class Tables {
             connection = DriverManager.getConnection("jdbc:sqlite:" + databaseName);
             connection.createStatement().execute("PRAGMA foreign_keys = ON");
         } catch (Exception e) {
-            System.exit(0);
+            e.printStackTrace();
         }
         return connection;
     }

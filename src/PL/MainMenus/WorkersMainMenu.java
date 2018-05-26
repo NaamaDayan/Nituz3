@@ -21,13 +21,18 @@ public  class WorkersMainMenu extends Functor {
     public void execute() {
         fillmap();
         System.out.println("Workers Menu");
+        String input;
         while (true) {
             userManual();
-            Command toExec = commands.get(reader.next());
-            if (toExec == null)
-                System.out.println("Illegal input!\n");
-            else
-                toExec.execute();
+            input = reader.next();
+            if (input.equals("5")) break;
+            else {
+                Command toExec = commands.get(input);
+                if (toExec == null)
+                    System.out.println("Illegal input!\n");
+                else
+                    toExec.execute();
+            }
         }
     }
 
@@ -36,7 +41,7 @@ public  class WorkersMainMenu extends Functor {
         commands.put("2", new UpdateCommand());
         commands.put("3", new SelectCommand());
         commands.put("4", new RemoveCommand());
-        commands.put("5", new mainMenuCommand());
+        commands.put("5", (Command) new mainMenuCommand());
     }
 
     public static void userManual() {

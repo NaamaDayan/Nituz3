@@ -16,9 +16,9 @@ public class InsertCommand implements Command {
         insertCommands.put("2" , new CreateShift());
         insertCommands.put("3", new InsertWorkersAvailableShifts());
         insertCommands.put("4" , new ScheduleWorker());
-        insertCommands.put("5", new InsertRole());
+        insertCommands.put("5", (Command) new InsertRole());
         insertCommands.put("6" , new InsertRoleForWorker());
-        insertCommands.put("7", new mainMenuCommand());
+        insertCommands.put("7", (Command) new mainMenuCommand());
     }
 
     @Override
@@ -34,7 +34,7 @@ public class InsertCommand implements Command {
         System.out.println("4 - Schedule a worker to a shift");
         System.out.println("5 - Insert a new role to the system");
         System.out.println("6 - Insert a new Role for a worker");
-        System.out.println("7 - Return to main menu");
+        System.out.println("7 - Return to previous menu");
     }
 
 

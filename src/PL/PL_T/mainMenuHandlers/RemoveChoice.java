@@ -10,7 +10,6 @@ public class RemoveChoice extends Functor {
 
     enum removeFunctions {
         RemoveTruck,
-        RemoveDriver,
         RemoveLicense,
         RemoveDelivery,
         RemoveDeliveryDestination,
@@ -22,10 +21,10 @@ public class RemoveChoice extends Functor {
     @Override
     public void execute() throws ParseException {
         Functor removeFuncs[] = fillRemoveFunctions();
-        System.out.println("Enter:\n 1 to remove Truck\n 2 to remove driver\n 3 to remove license\n 4 to remove delivery \n 5 to remove delivery destination\n 6 to remove place\n 7 to remove license of driver \n 8 to remove truck model\n 9 for main menu");
+        System.out.println("Enter:\n 1 to remove Truck\n 2 to remove license\n 3 to remove delivery \n 4 to remove delivery destination\n 5 to remove place\n 6 to remove license of driver \n 7 to remove truck model\n 8 for previous menu");
         int insertChoice = reader.nextInt();
-        insertChoice = TransportsMainMenu.rangeCheck(1, 9, insertChoice);
-        if (insertChoice == 9)
+        insertChoice = TransportsMainMenu.rangeCheck(1, 8, insertChoice);
+        if (insertChoice == 8)
             return;
         removeFuncs[insertChoice-1].execute();
     }

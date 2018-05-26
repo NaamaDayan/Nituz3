@@ -2,9 +2,11 @@ package DAL.DAL_T;
 
 
 import BL.BL_T.Entities.Place;
+import BL.BL_W.Entities_W.Shift;
 import BL.BL_W.Entities_W.Worker;
 import BL.BL_W.WorkerLogic;
 import DAL.Tables;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.sql.*;
 
@@ -73,5 +75,9 @@ public class Places {
         Worker contact = WorkerLogic.getWorker(contactName);
         String phoneNumber = rs.getString("PHONE_NUMBER");
         return new Place(id, address, phoneNumber, contact);
+    }
+
+    public static boolean isShiftExistInPlace(Shift shift, Place place) {
+        throw new NotImplementedException();
     }
 }

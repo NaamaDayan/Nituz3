@@ -15,7 +15,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws ParseException {
-        Tables.createDatabase();
+        Tables.openDatabase();
         programFlow();
     }
 
@@ -27,7 +27,7 @@ public class Main {
             int choice = reader.nextInt();
             choice = rangeCheck(1, 3, choice); //after this the choice is legal
             if (choice == 3) {
-                System.out.println("Bye!");
+                System.out.println("CLOSING");
                 break;
             }
             choiceFuncs[choice - 1].execute();

@@ -67,4 +67,13 @@ public class Shift {
         return (this.date.toString().equals(other.date.toString()) && this.workers.equals(other.workers)
                 && this.shiftDayPart.name.equals(other.shiftDayPart.name));
     }
+
+    @Override
+    public String toString() {
+        return "Shift{" +
+                "workers=" + workers +
+                ", date=" + date +
+                ", shiftDayPart=" + shiftDayPart +
+                '}';
+    }
 }
