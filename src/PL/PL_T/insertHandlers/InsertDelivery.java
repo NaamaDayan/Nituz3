@@ -47,7 +47,6 @@ public class InsertDelivery extends Functor{
             System.out.println("error: insertion failed");
             return;
         }
-        // TODO: 25/05/2018 add store keeper constrain (N)
         try {
             Time morning = new Time(new Time(Hourformat.parse("04:00").getTime()).getTime());
             Time evening = new Time(new Time(Hourformat.parse("15:59").getTime()).getTime());
