@@ -14,6 +14,7 @@ public class Worker {
     private Date employmentDate;
     private BankAccount bankAccount;
     private List<Role> roles;
+    private String phoneNumber;
 
     public Worker(String id, String fname, String lname, String phoneNum, Date employmentDate) {
         this.id = id;

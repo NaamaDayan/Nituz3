@@ -54,6 +54,12 @@ public class Tables {
         return connection;
     }
 
+    public static void openDatabase() {
+        File f = new File(databaseName);
+        if (!f.exists())
+            createDatabase();
+    }
+
 
     private static void createModelsTable(Connection conn) {
         try (Statement stmt = conn.createStatement();) {
@@ -170,9 +176,9 @@ public class Tables {
         try (Statement statement = connection.createStatement()) {
             String sql = "CREATE TABLE Workers " +
                     "(ID             TEXT    PRIMARY KEY     NOT NULL," +
-                    " PhoneNumber          TEXT    NOT NULL, " +
                     " FName          TEXT    NOT NULL, " +
                     " LName          TEXT    NOT NULL, " +
+                    " PhoneNumber          TEXT    NOT NULL, " +
                     " EmploymentDate    DATE); ";
             statement.executeUpdate(sql);
         } catch (SQLException e) {

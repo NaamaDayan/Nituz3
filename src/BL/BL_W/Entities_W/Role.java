@@ -3,9 +3,16 @@ package BL.BL_W.Entities_W;
 public class Role {
 
     private String role;
+    private String description;
 
-    public Role(String role) {
+    public Role(String role , String description) {
         this.role = role;
+        this.description = description;
+    }
+
+    public Role(String role){
+        this.role = role;
+        this.description = "";
     }
 
     public String getRole() {
@@ -18,5 +25,9 @@ public class Role {
             return false;
         Role other = (Role)obj;
         return this.role.toLowerCase().equals(other.role.toLowerCase());
+    }
+
+    public String getDescription() {
+        return description;
     }
 }
