@@ -6,7 +6,6 @@ import BL.BL_W.Entities_W.Shift;
 import BL.BL_W.Entities_W.Worker;
 import BL.BL_W.WorkerLogic;
 import DAL.Tables;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.sql.*;
 
@@ -78,6 +77,6 @@ public class Places {
     }
 
     public static boolean isShiftExistInPlace(Shift shift, Place place) {
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 }

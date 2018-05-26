@@ -54,12 +54,6 @@ public class Tables {
         return connection;
     }
 
-    public static void openDatabase() {
-        File f = new File(databaseName);
-        if (!f.exists())
-            createDatabase();
-    }
-
 
     private static void createModelsTable(Connection conn) {
         try (Statement stmt = conn.createStatement();) {

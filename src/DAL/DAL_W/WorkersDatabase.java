@@ -2,8 +2,6 @@ package DAL.DAL_W;
 
 import BL.BL_T.Entities.Place;
 import BL.BL_W.Entities_W.*;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.io.File;
 import java.sql.*;
 import java.sql.Date;
@@ -28,7 +26,7 @@ public class WorkersDatabase {
             pstmt1.setString(2, worker.getFname());
             pstmt1.setString(3, worker.getLname());
             pstmt1.setDate(4, worker.getEmploymentDate());
-            pstmt1.setString(5 , worker.getPhoneNumber());
+            pstmt1.setString(5 , worker.getPhoneNum());
             pstmt1.executeUpdate();
             pstmt2.setString(1, worker.getId());
             pstmt2.setString(2, worker.getBankAccount().getBankCode());
@@ -62,7 +60,7 @@ public class WorkersDatabase {
                 String branchNumber = rs.getString("BranchNumber");
                 List<Role> roles = getRoles(id);
                 String phoneNumber = rs.getString("PhoneNumber");
-                return new Worker(id, fName, lName, employmentDate, phoneNumber ,new BankAccount(bankCode, accountNumber, branchNumber), roles);
+                return new Worker(id, fName, lName, phoneNumber, employmentDate ,new BankAccount(bankCode, accountNumber, branchNumber), roles);
             }
         } catch (SQLException e) {
         }
@@ -138,8 +136,8 @@ public class WorkersDatabase {
             pstmt.setString(1, worker.getFname());
             pstmt.setString(2, worker.getLname());
             pstmt.setDate(3, worker.getEmploymentDate());
-            pstmt.setString(4, worker.getId());
-            pstmt.setString(5 , worker.getPhoneNumber());
+            pstmt.setString(4, worker.getPhoneNum());
+            pstmt.setString(5 , worker.getId());
             pstmt.executeUpdate();
             return true;
         } catch (SQLException e) {
@@ -438,7 +436,7 @@ public class WorkersDatabase {
     }
 
     public static boolean isStoreKeeperExistInShift(Shift shift){
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 
 }
