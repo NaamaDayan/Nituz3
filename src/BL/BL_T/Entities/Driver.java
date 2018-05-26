@@ -1,70 +1,32 @@
 package BL.BL_T.Entities;
 
+import BL.BL_W.Entities_W.BankAccount;
+import BL.BL_W.Entities_W.Role;
+import BL.BL_W.Entities_W.Worker;
+
+import java.sql.Date;
 import java.util.List;
 
-/*public class Driver{
+public class Driver extends Worker{
 
-    private String id;
-    private String firstName;
-    private String lastName;
-    private String phoneNumber;
+
+
     private List<LicenseTypeForTruck> licenses;
 
-    public Driver(String id, String firstName, String lastName, String phoneNumber, List<LicenseTypeForTruck> licenses) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
+    public Driver(String id, String fname, String lname, String phoneNum, Date employmentDate) {
+        super(id, fname, lname, phoneNum, employmentDate);
+    }
+
+    public Driver(String id, String fname, String lname, String phoneNum, Date employmentDate, BankAccount bankAccount) {
+        super(id, fname, lname, phoneNum, employmentDate, bankAccount);
+    }
+
+    public Driver(String id, String fname, String lname, String phoneNum, Date employmentDate, BankAccount bankAccount, List<Role> roles, List<LicenseTypeForTruck> licenses) {
+        super(id, fname, lname, phoneNum, employmentDate, bankAccount, roles);
         this.licenses = licenses;
     }
 
-    @Override
-    public String toString() {
-        String licensesString;
-        if (licenses!=null) {
-            licensesString= "{";
-            for (LicenseTypeForTruck license : licenses)
-                licensesString = licensesString + license.toString() + ", ";
-            if (licensesString.length() > 1)
-                licensesString = licensesString.substring(0, licensesString.length() - 2);
-            licensesString += "}";
-        }
-        else
-            licensesString = "{}";
-        return "Driver{" +
-                "id ='" + id + '\'' +
-                ", firstName ='" + firstName + '\'' +
-                ", lastName ='" + lastName + '\'' +
-                ", phoneNumber ='" + phoneNumber + '\'' +
-                ", licenses ='" + licensesString + '\'' +
-                '}';
+    public void setLicenses(List<LicenseTypeForTruck> licenses) {
+        this.licenses = licenses;
     }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-}*/
+}
