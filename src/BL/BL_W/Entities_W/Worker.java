@@ -97,6 +97,14 @@ public class Worker {
         this.phoneNum = phoneNum;
     }
 
+    public boolean isDriver(){
+        for (Role r: roles) {
+            if (r.getRole().equals("Driver"))
+                return true;
+        }
+        return false;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (!(obj instanceof Worker))
@@ -132,13 +140,5 @@ public class Worker {
                 ret += role + ", ";
         }
         return ret;
-    }
-
-    public boolean isDriver(){
-        for (Role r: roles) {
-            if (r.getRole().equals("Driver"))
-                return true;
-        }
-        return false;
     }
 }
