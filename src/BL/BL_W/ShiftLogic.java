@@ -52,4 +52,8 @@ public class ShiftLogic {
     public static boolean isStoreKeeperExistInShift(Shift shift){
         return WorkersDatabase.isStoreKeeperExistInShift(shift);
     }
+
+    public static Worker getShiftManager(Shift newShift) {
+        return WorkersDatabase.getShiftManager(newShift);
+    }
 }

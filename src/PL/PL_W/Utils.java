@@ -35,7 +35,15 @@ public class Utils {
         for(Worker worker: availableWorkers)
             ret+= worker.getId()+ "\t" +worker.getFname()+ "\t" +worker.getLname()+"\t"+worker.projectRoles()+"\n";
         return ret;
+    }
 
+    public static String projectShiftManagers(List<Worker>shiftManagers){
+        String ret = "";
+        for (Worker worker :
+                shiftManagers) {
+            ret+= worker.getId()+ "\t" +worker.getFname()+ "\t" +worker.getLname();
+        }
+        return ret;
     }
 
 

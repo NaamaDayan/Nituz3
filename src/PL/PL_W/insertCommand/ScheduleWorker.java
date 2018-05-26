@@ -53,6 +53,9 @@ public class ScheduleWorker implements Command {
                 return;
             }
 
+            if(ShiftLogic.getShiftManager(newShift).equals(worker))
+                System.out.println("this worker is already assigned as the manager of the shift");
+
             if (WorkerLogic.isWorkerAvailableForShift(worker, newShift)) {
                 System.out.println("Worker is not available for the specific shift\n");
                 return;

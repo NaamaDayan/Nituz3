@@ -1,8 +1,11 @@
 package PL.PL_W.insertCommand;
 
+import BL.BL_W.Entities_W.Worker;
 import BL.BL_W.ShiftLogic;
 import BL.BL_W.Entities_W.Shift;
+import BL.BL_W.WorkerLogic;
 import PL.PL_W.Command;
+import PL.PL_W.Utils;
 
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -33,6 +36,20 @@ public class CreateShift implements Command {
                 if (ShiftLogic.shiftExists(newShift))
                     System.out.println("Specific shift already exists\n");
                 else {
+                    System.out.println("Enter shift manager");
+                    System.out.println(Utils.projectShiftManagers(WorkerLogic.getShiftManagers()));
+                    String shiftManagerId = reader.next();
+                    Worker shiftManager = WorkerLogic.getWorker(shiftManagerId);
+                    if(shiftManager == null) {
+                        System.out.println("worker doesn't exist in the system");
+                        return;
+                    }
+                    if(!WorkerLogic.isShiftManager(shiftManager)) {
+                        System.out.println("worker " + shiftManagerId + " is not a shift manager");
+                        return;
+                    }
+
+                    newShift = new Shift(new java.sql.Date(d.getTime()), shiftDayPart, shiftManager);
                     if(ShiftLogic.insertShift(newShift))
                         System.out.println("new shift added Successfully\n");
                 }

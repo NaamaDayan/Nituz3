@@ -1,5 +1,7 @@
 package BL.BL_W.Entities_W;
 
+import com.sun.corba.se.impl.orbutil.threadpool.WorkQueueImpl;
+
 import java.sql.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,6 +11,14 @@ public class Shift {
     private List<Worker> workers;
 
     private Date date;
+
+    private Worker shiftManager;
+
+    private String placeId;
+
+    public String getPlaceId() {
+        return placeId;
+    }
 
     public enum ShiftDayPart {
         Morning("Morning"),
@@ -25,6 +35,13 @@ public class Shift {
     }
 
     ShiftDayPart shiftDayPart;
+
+    public Shift(Date date, ShiftDayPart shiftDayPart, Worker shiftManager){
+        this.date = date;
+        this.shiftDayPart = shiftDayPart;
+        workers = new LinkedList<>();
+        this.shiftManager = shiftManager;
+    }
 
     public Shift(Date date, ShiftDayPart shiftDayPart) {
         this.date = date;

@@ -434,8 +434,70 @@ public class WorkersDatabase {
         }
     }
 
-    public static boolean isStoreKeeperExistInShift(Shift shift){
+    public static boolean isStoreKeeperExistInShift(Shift shift) {
         throw new NotImplementedException();
+    }
+
+    public static List<Worker> getShiftManagers() {
+        String sql = "SELECT ID, FName, LName, PhoneNumber FROM Workers, WorkerRoles, Roles WHERE " +
+                "Workers.ID=WorkerRoles.WorkerID AND WorkerRoles.Role = Roles.RoleID AND Roles.RoleName =?";
+        try (Connection connection = openConnection();
+             PreparedStatement pstmt = connection.prepareStatement(sql)) {
+            pstmt.setString(1, "Shift Manager");
+            return parseRStoListSM(pstmt.executeQuery());
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
+    }
+
+    private static List<Worker> parseRStoListSM(ResultSet rs) {
+        List<Worker> parsed = new ArrayList<>();
+        try {
+            if (!rs.isBeforeFirst()) return parsed;
+            while (rs.next()) {
+                String ID = rs.getString("ID");
+                String fName = rs.getString("FName");
+                String lName = rs.getString("LName");
+                String phoneNum = rs.getString("PhoneNumber");
+                Worker toAdd = new Worker(ID, fName, lName, phoneNum, null);
+                parsed.add(toAdd);
+            }
+            return parsed;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return parsed;
+        }
+    }
+
+    public static boolean isShiftManager(Worker shiftManager) {
+        String sql = "SELECT * FROM Workers, WorkerRoles, Roles WHERE " +
+                "Workers.ID=WorkerRoles.WorkerID AND WorkerRoles.Role = Roles.RoleID AND Workers.ID = ?";
+        try (Connection connection = openConnection();
+             PreparedStatement pstmt = connection.prepareStatement(sql)) {
+            pstmt.setString(1, shiftManager.getId());
+            return pstmt.executeQuery().isBeforeFirst();
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public static Worker getShiftManager(Shift newShift) {
+        String sql = "SELECT ManagerId FROM Shifts as s WHERE s.ShiftDate=? AND s.ShiftDayPart=? AND s.PlaceId=?";
+        try (Connection connection = openConnection();
+             PreparedStatement pstmt = connection.prepareStatement(sql)) {
+            pstmt.setDate(1, newShift.getDate());
+            pstmt.setString(2, newShift.getShiftDayPart().toString());
+            pstmt.setString(3, newShift.getPlaceId());
+            return getWorker(pstmt.executeQuery().getString("ManagerId"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
 }
