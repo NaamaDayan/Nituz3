@@ -84,7 +84,7 @@ public class InsertDelivery extends Functor{
         Truck truck = TruckFunctions.retrieveTruck(truckId);
         System.out.println("enter driver id");
         String driverId = reader.next();
-        Worker driver = WorkerLogic.getWorker(driverId);
+        Driver driver = DriverFunctions.getDriver(driverId);
         try {
             if (driver == null){
                 System.out.println("driver does not exist");
