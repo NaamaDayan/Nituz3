@@ -11,22 +11,12 @@ public class Place {
     private String address;
     private String phoneNumber;
     private Worker contactName;
-    private List<Shift> shifts;
 
     public Place(String id, String address, String phoneNumber, Worker contactName) {
         this.id = id;
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.contactName = contactName;
-        this.shifts = null;
-    }
-
-    public Place(String id, String address, String phoneNumber, Worker contactName, List<Shift> shifts) {
-        this.id = id;
-        this.address = address;
-        this.phoneNumber = phoneNumber;
-        this.contactName = contactName;
-        this.shifts = shifts;
     }
 
     @Override
@@ -36,7 +26,6 @@ public class Place {
                 ", address='" + address + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", contactName=" + contactName +
-                ", shifts=" + shifts +
                 '}';
     }
 
