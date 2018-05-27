@@ -103,10 +103,6 @@ public class InsertDelivery extends Functor {
                     System.out.println("driver is not register to a shift in the given date");
                     return;
                 }
-                if (!WorkerLogic.isWorkerAvailableForShift(driver, shift)) {
-                    System.out.println("the driver is not available for the shift");
-                    return;
-                }
                 //insert the delivery
                 Delivery delivery = new Delivery(deliveryId, leavingDate, leavingHour, truck, driver, place, new LinkedList<>());
                 DeliveryFunctions.insertDelivery(delivery);
