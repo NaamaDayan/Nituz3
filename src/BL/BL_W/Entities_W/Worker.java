@@ -127,7 +127,7 @@ public class Worker {
         String rolesSTR = projectRoles();
         if(roles.isEmpty())
             return "ID="+id + "\t" +"FName="+ fname + "\t" + "LName="+lname + "\t" + "Phone number="+phoneNum + "\t" + "EmploymentDate="+ new SimpleDateFormat("dd/MM/yyyy").format(employmentDate) + "\t" + bankAccount.toString();
-        return "ID="+id + "\t" +"FName="+ fname + "\t" + "LName="+lname + "\t" + "EmploymentDate="+ new SimpleDateFormat("dd/MM/yyyy").format(employmentDate) + "\t" + bankAccount.toString() + "\t" +"Roles="+ rolesSTR;
+        return "ID="+id + "\t" +"FName="+ fname + "\t" + "LName="+lname + "\t"+ "Phone number="+phoneNum + "\t" + "EmploymentDate="+ new SimpleDateFormat("dd/MM/yyyy").format(employmentDate) + "\t" + bankAccount.toString() + "\t" +"Roles="+ rolesSTR;
     }
 
     public String projectRoles() {

@@ -17,6 +17,8 @@ public class RemoveActualShift extends RemoveShift implements Command{
             return;
         }
         getShift();
+        if(shiftToRemove == null)
+            return;
         if(ShiftLogic.removeWorkerShift(worker, shiftToRemove))
             System.out.println("removed the assigning of the shift of worker "+worker.getId()+" successfully\n");
         else

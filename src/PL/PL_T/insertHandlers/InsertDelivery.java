@@ -49,7 +49,6 @@ public class InsertDelivery extends Functor {
             return;
         }
         try {
-            Time morning = new Time(new Time(Hourformat.parse("04:00").getTime()).getTime());
             Time evening = new Time(new Time(Hourformat.parse("15:59").getTime()).getTime());
             String shiftDayPart;
             if (leavingHour.after(evening))

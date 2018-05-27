@@ -17,6 +17,8 @@ public class RemoveAvailableShift extends RemoveShift implements Command {
             return;
         }
         getShift();
+        if(shiftToRemove == null)
+            return;
         if (ShiftLogic.removeAvailableShifts(worker,shiftToRemove))
             System.out.println("removed the availability of the shift of worker " + worker.getId() + " successfully\n");
         else

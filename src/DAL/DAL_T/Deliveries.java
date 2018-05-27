@@ -39,7 +39,7 @@ public class Deliveries{
 
     public static void updateDelivery(Delivery d) throws SQLException, ClassNotFoundException {
         Connection conn = Tables.openConnection();
-        String query = "UPDATE Deliveries SET LEAVING_DATE = ?, LEAVING_TIME = ?, TRUCK_ID = ? DRIVER_ID = ?, SOURCE_ID = ? WHERE ID = ?  ";
+        String query = "UPDATE Deliveries SET LEAVING_DATE = ?, LEAVING_TIME = ?, TRUCK_ID = ?, DRIVER_ID = ?, SOURCE_ID = ? WHERE ID = ?  ";
         PreparedStatement stmt = conn.prepareStatement(query);
         stmt.setDate(1, d.getLeavingDate());
         stmt.setTime(2, d.getLeavingTime());

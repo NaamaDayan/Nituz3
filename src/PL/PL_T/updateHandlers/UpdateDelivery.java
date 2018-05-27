@@ -1,14 +1,18 @@
 package PL.PL_T.updateHandlers;
 
 import BL.BL_T.Entities.Delivery;
+import BL.BL_T.Entities.Place;
 import BL.BL_T.Entities.Truck;
 import BL.BL_T.EntitiyFunctions.*;
+import BL.BL_W.Entities_W.Shift;
+import BL.BL_W.ShiftLogic;
 import PL.Functor;
 import BL.BL_W.WorkerLogic;
 import BL.BL_W.Entities_W.Worker;
 import PL.PL_T.Utils;
 import PL.PL_T.insertHandlers.InsertDeliveryDestination;
 
+import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
@@ -72,7 +76,7 @@ public class UpdateDelivery extends Functor {
         if (Utils.boolQuery("update driver? y/n")) {
             System.out.println("enter driver id");
             String driverId = reader.next();
-            Worker driver = WorkerLogic.getWorker(driverId);
+            Worker driver = DriverFunctions.getDriver(driverId);
             try {
                 if (driver == null){
                     System.out.println("driver does not exist");
@@ -91,9 +95,32 @@ public class UpdateDelivery extends Functor {
         if (Utils.boolQuery("update source id? y/n")) {
             System.out.println("enter source id");
             String sourceId = reader.next();
+
+
+
+
             try {
                 if (!PlaceFunctions.isExist(sourceId)){
                     System.out.println("source does not exist");
+                    return;
+                }
+                Place place = PlaceFunctions.retrievePlace(sourceId);
+
+                Time evening = null;
+                try {
+                    evening = new Time(new Time(Hourformat.parse("15:59").getTime()).getTime());
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                String shiftDayPart;
+                if (d.getLeavingTime().after(evening))
+                    shiftDayPart = "Evening";
+                else
+                    shiftDayPart = "Morning";
+
+                Shift shift = ShiftLogic.getShift(d.getLeavingDate(), Shift.getDayPartByName(shiftDayPart), place);
+                if (shift == null) {
+                    System.out.println("there is no such shift in the specified place");
                     return;
                 }
             } catch (Exception e) {
@@ -111,6 +138,7 @@ public class UpdateDelivery extends Functor {
         try {
             DeliveryFunctions.updateDelivery(d);
         } catch (Exception e) {
+            e.printStackTrace();
             System.out.println("error: update failed");
         }
     }
