@@ -40,8 +40,8 @@ public class CreateShift implements Command {
                     return;
                 }
                 Place place = PlaceFunctions.retrievePlace(placeId);
-                Shift newShift = new Shift(new java.sql.Date(d.getTime()), shiftDayPart, place);
-                if (ShiftLogic.shiftExists(newShift))
+                Shift newShift = ShiftLogic.getShift(new java.sql.Date(d.getTime()), shiftDayPart, place);
+                if (newShift != null)
                     System.out.println("Specific shift already exists\n");
                 else {
                     System.out.println("Enter shift manager");

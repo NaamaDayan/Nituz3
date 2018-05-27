@@ -52,11 +52,12 @@ public class Shift {
         workers = new LinkedList<>();
     }
 
-    public Shift(Date date, ShiftDayPart shiftDayPart , List<Worker> workers , Place place) {
+    public Shift(Date date, ShiftDayPart shiftDayPart , List<Worker> workers , Place place, Worker shiftManager) {
         this.place = place;
         this.date = date;
         this.shiftDayPart = shiftDayPart;
         this.workers = workers;
+        this.shiftManager = shiftManager;
     }
 
     public static ShiftDayPart getDayPartByName(String shiftDayPartName){

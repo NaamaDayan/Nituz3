@@ -23,10 +23,9 @@ public class InsertWorkersAvailableShifts implements Command {
         System.out.println("Enter Worker ID: ");
         String id = reader.next();
         Worker worker = WorkerLogic.getWorker(id);
-        if(worker==null){
-            System.out.println("Worker with ID "+id+ "Does not Exist in the system\n");
-        }
-        else{
+        if (worker == null) {
+            System.out.println("Worker with ID " + id + "Does not Exist in the system\n");
+        } else {
             System.out.println("Enter a Date: ");
             String date = reader.next();
             Date d = new Date();
@@ -38,16 +37,16 @@ public class InsertWorkersAvailableShifts implements Command {
             String shiftDayPart = reader.next();
             Shift.ShiftDayPart enumShiftDayPart;
             Shift.ShiftDayPart temp = Shift.getDayPartByName(shiftDayPart);
-            if(temp!=null)
+            if (temp != null)
                 enumShiftDayPart = temp;
-            else{
+            else {
                 System.out.println("Illegal input\n");
                 return;
             }
             System.out.println("enter place id");
             String placeId = reader.next();
             try {
-                if (!PlaceFunctions.isExist(placeId)){
+                if (!PlaceFunctions.isExist(placeId)) {
                     System.out.println("place does not exist");
                     return;
                 }
@@ -55,22 +54,18 @@ public class InsertWorkersAvailableShifts implements Command {
                 e.printStackTrace();
             }
             Place place = PlaceFunctions.retrievePlace(placeId);
-            Shift shift = new Shift(new java.sql.Date(d.getTime()), enumShiftDayPart, place);
-            try {
-                if(!ShiftLogic.shiftExists(shift)){
-                    System.out.println("Shift doesn't exist , Please Create it before inserting workers\n");
-                    return;
-                }
-            } catch (SQLException e) {
+            Shift shift = ShiftLogic.getShift(new java.sql.Date(d.getTime()), temp, place);
+            if (shift == null) {
+                System.out.println("Shift doesn't exist , Please Create it before inserting workers\n");
                 return;
             }
-            if(!WorkerLogic.isWorkerAvailableForShift(worker , shift)){
-                System.out.println("Worker "+id+" is not available for this shift");
+            if (!WorkerLogic.isWorkerAvailableForShift(worker, shift)) {
+                System.out.println("Worker " + id + " is not available for this shift");
                 return;
             }
 
-            if(ShiftLogic.insertWorkerToAvailableShift(worker, shift))
-                System.out.println("Worker "+id+" is now available for the "+enumShiftDayPart.name()+ " shift at "+date+"\n");
+            if (ShiftLogic.insertWorkerToAvailableShift(worker, shift))
+                System.out.println("Worker " + id + " is now available for the " + enumShiftDayPart.name() + " shift at " + date + "\n");
         }
     }
 }

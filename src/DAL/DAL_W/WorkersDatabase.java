@@ -1,7 +1,8 @@
 package DAL.DAL_W;
 
+import BL.BL_T.Entities.Place;
+import BL.BL_T.EntitiyFunctions.PlaceFunctions;
 import BL.BL_W.Entities_W.*;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.sql.*;
 import java.sql.Date;
@@ -26,7 +27,7 @@ public class WorkersDatabase {
             pstmt1.setString(2, worker.getFname());
             pstmt1.setString(3, worker.getLname());
             pstmt1.setDate(4, worker.getEmploymentDate());
-            pstmt1.setString(5 , worker.getPhoneNum());
+            pstmt1.setString(5, worker.getPhoneNum());
             pstmt1.executeUpdate();
             pstmt2.setString(1, worker.getId());
             pstmt2.setString(2, worker.getBankAccount().getBankCode());
@@ -60,7 +61,7 @@ public class WorkersDatabase {
                 String branchNumber = rs.getString("BranchNumber");
                 List<Role> roles = getRoles(id);
                 String phoneNumber = rs.getString("PhoneNumber");
-                return new Worker(id, fName, lName, phoneNumber, employmentDate ,new BankAccount(bankCode, accountNumber, branchNumber), roles);
+                return new Worker(id, fName, lName, phoneNumber, employmentDate, new BankAccount(bankCode, accountNumber, branchNumber), roles);
             }
         } catch (SQLException e) {
         }
@@ -89,7 +90,7 @@ public class WorkersDatabase {
             while (rs.next()) {
                 String roleName = rs.getString("RoleName");
                 String roleDesc = rs.getString("RoleDescription");
-                workerRoles.add(new Role(roleName , roleDesc));
+                workerRoles.add(new Role(roleName, roleDesc));
             }
         } catch (SQLException e) {
         }
@@ -121,7 +122,7 @@ public class WorkersDatabase {
             pstmt.setString(1, worker.getId());
             pstmt.setDate(2, shift.getDate());
             pstmt.setString(3, shift.getShiftDayPart().toString());
-            pstmt.setString(4 , shift.getPlace().getId());
+            pstmt.setString(4, shift.getPlace().getId());
             pstmt.execute();
             return true;
         } catch (SQLException e) {
@@ -137,7 +138,7 @@ public class WorkersDatabase {
             pstmt.setString(2, worker.getLname());
             pstmt.setDate(3, worker.getEmploymentDate());
             pstmt.setString(4, worker.getPhoneNum());
-            pstmt.setString(5 , worker.getId());
+            pstmt.setString(5, worker.getId());
             pstmt.executeUpdate();
             return true;
         } catch (SQLException e) {
@@ -153,7 +154,7 @@ public class WorkersDatabase {
             pstmt.setString(1, worker.getId());
             pstmt.setDate(2, shift.getDate());
             pstmt.setString(3, (shift.getShiftDayPart()).toString());
-            pstmt.setString(4 , shift.getPlace().getId());
+            pstmt.setString(4, shift.getPlace().getId());
             pstmt.execute();
             return true;
         } catch (SQLException e) {
@@ -169,7 +170,7 @@ public class WorkersDatabase {
             pstmt.setString(1, worker.getId());
             pstmt.setDate(2, shift.getDate());
             pstmt.setString(3, (shift.getShiftDayPart()).toString());
-            pstmt.setString(4 , shift.getPlace().getId());
+            pstmt.setString(4, shift.getPlace().getId());
             pstmt.execute();
             return true;
 
@@ -236,7 +237,7 @@ public class WorkersDatabase {
              PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setDate(1, shift.getDate());
             pstmt.setString(2, (shift.getShiftDayPart()).toString());
-            pstmt.setString(3 , shift.getPlace().getId());
+            pstmt.setString(3, shift.getPlace().getId());
             ResultSet rs = pstmt.executeQuery();
             return mappingRSForShifts(rs);
         } catch (SQLException e) {
@@ -244,7 +245,7 @@ public class WorkersDatabase {
         }
     }
 
-    // TODO: 25/05/2018 add the employment date
+
     private static Map<Worker, Role> mappingRSForShifts(ResultSet resultSet) {
         ResultSet rs = resultSet;
         Map<Worker, Role> data = new HashMap<>();
@@ -254,7 +255,7 @@ public class WorkersDatabase {
                 String ID = rs.getString("ID");
                 String role = rs.getString("RoleName");
                 String roleDesc = rs.getString("RoleDescription");
-                data.put(getWorker(ID), new Role(role , roleDesc));
+                data.put(getWorker(ID), new Role(role, roleDesc));
             }
 
         } catch (SQLException e) {
@@ -274,7 +275,7 @@ public class WorkersDatabase {
                  PreparedStatement pstmt = connection.prepareStatement(sql)) {
                 pstmt.setDate(1, shift.getDate());
                 pstmt.setString(2, (shift.getShiftDayPart()).toString());
-                pstmt.setString(3 , shift.getPlace().getId());
+                pstmt.setString(3, shift.getPlace().getId());
                 ResultSet rs = pstmt.executeQuery();
                 return listingRSForShifts(rs);
             }
@@ -304,7 +305,7 @@ public class WorkersDatabase {
              PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setDate(1, s.getDate());
             pstmt.setString(2, s.getShiftDayPart().toString());
-            pstmt.setString(3 , s.getPlace().getId());
+            pstmt.setString(3, s.getPlace().getId());
             pstmt.executeUpdate();
             return true;
         } catch (SQLException e) {
@@ -320,7 +321,7 @@ public class WorkersDatabase {
              PreparedStatement pstmt = connection.prepareStatement(sql)) {
             ResultSet resultSet = pstmt.executeQuery();
             while (resultSet.next()) {
-                Role r = new Role(resultSet.getString("RoleName") , resultSet.getString("RoleDescription"));
+                Role r = new Role(resultSet.getString("RoleName"), resultSet.getString("RoleDescription"));
                 allRoles.add(r);
             }
             return allRoles;
@@ -334,7 +335,7 @@ public class WorkersDatabase {
         try (Connection connection = openConnection();
              PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setString(1, role.getRole());
-            pstmt.setString(2 , role.getRoleDesc());
+            pstmt.setString(2, role.getRoleDesc());
             pstmt.executeUpdate();
             return true;
         } catch (SQLException e) {
@@ -352,23 +353,24 @@ public class WorkersDatabase {
             return (rs.isBeforeFirst());
         }
     }
-/*
-    //returns the shifts without the workers scheduled in the shift
-    public static List<Shift> getAllCreatedShifts() {
-        List<Shift> allShifts = new LinkedList<>();
-        String sql = "Select ShiftDate , ShiftDayPart , PlaceId From Shifts";
-        try (Connection connection = openConnection();
-             PreparedStatement pstmt = connection.prepareStatement(sql)) {
-            ResultSet rs = pstmt.executeQuery();
-            while (rs.next())
-                allShifts.add(new Shift(rs.getDate("ShiftDate"), Shift.getDayPartByName(rs.getString("ShiftDayPart"))));
-        } catch (SQLException e) {
-            return null;
-        }
-        return allShifts;
-    }
-*/
 
+    /*
+        //returns the shifts without the workers scheduled in the shift
+        public static List<Shift> getAllCreatedShifts() {
+            List<Shift> allShifts = new LinkedList<>();
+            String sql = "Select ShiftDate , ShiftDayPart , PlaceId From Shifts";
+            try (Connection connection = openConnection();
+                 PreparedStatement pstmt = connection.prepareStatement(sql)) {
+                ResultSet rs = pstmt.executeQuery();
+                while (rs.next())
+                    allShifts.add(new Shift(rs.getDate("ShiftDate"), Shift.getDayPartByName(rs.getString("ShiftDayPart"))));
+            } catch (SQLException e) {
+                return null;
+            }
+            return allShifts;
+        }
+    */
+/*
     public static boolean shiftExists(Shift newShift) throws SQLException {
         String sql = "Select * From Shifts Where ShiftDate=? AND ShiftDayPart=? AND PlaceId = ?";
         try (Connection connection = openConnection();
@@ -380,6 +382,60 @@ public class WorkersDatabase {
             return rs.isBeforeFirst();
         }
     }
+*/
+    public static Shift getShift(Date date, Shift.ShiftDayPart dayPart, Place place) {
+        String sql = "Select * From Shifts Where ShiftDate=? AND ShiftDayPart=? AND PlaceId = ?";
+        try (Connection connection = openConnection();
+             PreparedStatement pstmt = connection.prepareStatement(sql)) {
+            pstmt.setDate(1, date);
+            pstmt.setString(2, dayPart.toString());
+            pstmt.setString(3, place.getId());
+            ResultSet rs = pstmt.executeQuery();
+            return parseRSToShift(rs);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static List<Role> getRolesOfShift(Shift shift){
+        Map<Worker, Role> workerRoleMap = selectAssignedWorkers(shift);
+        return parseMapToListRoles(workerRoleMap);
+    }
+
+    public static List<Role> parseMapToListRoles(Map<Worker, Role> workerRoleMap){
+        List<Role> roles = new ArrayList<>();
+        for (Role r :
+                workerRoleMap.values()) {
+            roles.add(r);
+        }
+        return roles;
+    }
+
+    private static Shift parseRSToShift(ResultSet rs) {
+        try {
+            Date shiftDate = rs.getDate("ShiftDate");
+            Shift.ShiftDayPart dayPart = Shift.getDayPartByName(rs.getString("ShiftDayPart"));
+            Place place = PlaceFunctions.retrievePlace(rs.getString("PlaceId"));
+            Worker shiftManager = getWorker(rs.getString("ManagerId"));
+            List<Worker> workers = mapToListWorkers(selectAssignedWorkers(new Shift(shiftDate, dayPart, place)));
+            return new Shift(shiftDate, dayPart, workers, place, shiftManager);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+    }
+
+    private static List<Worker> mapToListWorkers(Map<Worker, Role> workerRoleMap) {
+        List<Worker> workers = new ArrayList<>();
+        for (Worker w :
+                workerRoleMap.keySet()) {
+            workers.add(w);
+        }
+        return workers;
+    }
+
 
     public static boolean scheduleWorker(Shift newShift, Worker worker, Role role) {
         int roleID = getRoleIDByName(role.getRole());
@@ -390,7 +446,7 @@ public class WorkersDatabase {
             pstmt.setDate(2, newShift.getDate());
             pstmt.setString(3, newShift.getShiftDayPart().toString());
             pstmt.setInt(4, roleID);
-            pstmt.setString(5 , newShift.getPlace().getId());
+            pstmt.setString(5, newShift.getPlace().getId());
             pstmt.execute();
             return true;
         } catch (SQLException e) {
@@ -405,7 +461,7 @@ public class WorkersDatabase {
             pstmt.setString(1, worker.getId());
             pstmt.setDate(2, shift.getDate());
             pstmt.setString(3, shift.getShiftDayPart().toString());
-            pstmt.setString(4 , shift.getPlace().getId());
+            pstmt.setString(4, shift.getPlace().getId());
             ResultSet rs = pstmt.executeQuery();
             return !rs.isBeforeFirst();
         } catch (SQLException e) {
@@ -417,7 +473,7 @@ public class WorkersDatabase {
         String sql = "SELECT * FROM WorkersShifts WHERE PlaceId = ? AND WorkerID=? AND ShiftDate=? AND ShiftDayPart=?";
         try (Connection connection = openConnection();
              PreparedStatement pstmt = connection.prepareStatement(sql)) {
-            pstmt.setString(1 , shift.getPlace().getId());
+            pstmt.setString(1, shift.getPlace().getId());
             pstmt.setString(2, worker.getId());
             pstmt.setDate(3, shift.getDate());
             pstmt.setString(4, shift.getShiftDayPart().toString());
@@ -428,9 +484,9 @@ public class WorkersDatabase {
     }
 
 
-    public static boolean isStoreKeeperExistInShift(Shift shift) {
-        throw new NotImplementedException();
-    }
+//    public static boolean isStoreKeeperExistInShift(Shift shift) {
+//
+//    }
 
     public static List<Worker> getShiftManagers() {
         String sql = "SELECT ID, FName, LName, PhoneNumber FROM Workers, WorkerRoles, Roles WHERE " +

@@ -3,6 +3,7 @@ package PL.PL_W.selectCommand;
 import BL.BL_T.Entities.Place;
 import BL.BL_T.EntitiyFunctions.PlaceFunctions;
 import BL.BL_W.Entities_W.Shift;
+import BL.BL_W.ShiftLogic;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -39,7 +40,7 @@ public class SelectShift {
             e.printStackTrace();
         }
         Place place = PlaceFunctions.retrievePlace(placeId);
-        desiredShift = new Shift(new java.sql.Date(d.getTime()), dayPart, place);
+        desiredShift = ShiftLogic.getShift(new java.sql.Date(d.getTime()), dayPart, place);
     }
 
 

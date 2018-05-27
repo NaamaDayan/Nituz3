@@ -19,8 +19,17 @@ public class RolesLogic {
 
     public static List<Role> getAllRoles(){
         return WorkersDatabase.selectAllRoles();
-
     }
+
+    public static boolean containsStoreKeeper(List<Role> rolesInShift){
+        for (Role r :
+                rolesInShift) {
+            if (r.getRole().toLowerCase().equals("Storekeeper".toLowerCase()))
+                return true;
+        }
+        return false;
+    }
+
 
     public static boolean insertRoleForWorker(Worker worker, Role role) {
         return WorkersDatabase.insertRoleForWorker(worker , role);

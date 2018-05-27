@@ -5,6 +5,7 @@ import BL.BL_T.Entities.*;
 import BL.BL_T.EntitiyFunctions.*;
 import BL.BL_W.Entities_W.Shift;
 import BL.BL_W.Entities_W.Worker;
+import BL.BL_W.RolesLogic;
 import BL.BL_W.ShiftLogic;
 import BL.BL_W.WorkerLogic;
 import PL.Functor;
@@ -65,11 +66,11 @@ public class InsertDelivery extends Functor {
                 return;
             }
             Place place = PlaceFunctions.retrievePlace(placeId);
-            Shift shift = new Shift(leavingDate, enumShiftDayPart, place);
-      /*  if (!PlaceFunctions.isPlaceHasShiftInSpecifiedTime(place, enumShiftDayPart, leavingDate)) {
+            Shift shift = ShiftLogic.getShift(leavingDate, enumShiftDayPart, place);
+        if (!PlaceFunctions.isPlaceHasShiftInSpecifiedTime(place, enumShiftDayPart, leavingDate)) {
             System.out.println("there is no such shift in the specified place");
             return;
-        }*/
+        }
             System.out.println("enter truck id");
             String truckId = reader.next();
             try {
@@ -121,7 +122,7 @@ public class InsertDelivery extends Functor {
                     DeliveryFunctions.removeDelivery(deliveryId);
                     return;
                 }
-                if (!ShiftLogic.isStoreKeeperExistInShift(shift)) {
+                if (!RolesLogic.containsStoreKeeper(ShiftLogic.getRolesOfShift(shift))) {
                     System.out.println("there is no storeKeeper registered in the shift");
                     DeliveryFunctions.removeDelivery(deliveryId);
                     return;
@@ -138,7 +139,7 @@ public class InsertDelivery extends Functor {
                         DeliveryFunctions.removeDelivery(deliveryId);
                         return;
                     }
-                    if (!ShiftLogic.isStoreKeeperExistInShift(shift)) {
+                    if (!RolesLogic.containsStoreKeeper(ShiftLogic.getRolesOfShift(shift))) {
                         System.out.println("there is no storeKeeper registered in the shift");
                         DeliveryFunctions.removeDelivery(deliveryId);
                         return;

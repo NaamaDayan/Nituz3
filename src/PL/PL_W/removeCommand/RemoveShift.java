@@ -37,15 +37,11 @@ public class RemoveShift {
             e.printStackTrace();
         }
         Place place = PlaceFunctions.retrievePlace(placeId);
-            Shift temp = new Shift(new java.sql.Date(d.getTime()), dayPart, place);
-        try {
-            if(ShiftLogic.shiftExists(temp))
+            Shift temp = ShiftLogic.getShift(new java.sql.Date(d.getTime()), dayPart, place);
+            if(temp != null)
                 shiftToRemove = temp;
             else
                 System.out.println("Shift doesn't exist\n");
-        } catch (SQLException e) {
-            System.out.println("Error occurred while trying to retrieve the desired shift\n");
-        }
 
     }
 }
