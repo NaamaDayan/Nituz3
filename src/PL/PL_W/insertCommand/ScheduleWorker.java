@@ -22,17 +22,13 @@ import java.util.Scanner;
 
 public class ScheduleWorker implements Command {
     static Scanner reader = new Scanner(System.in);
+    private static SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
 
     @Override
     public void execute() {
         try {
             System.out.println("Enter shift date");
-            String sDate = reader.next();
-            Date d = new Date();
-            try {
-                d = new SimpleDateFormat("dd/MM/yyyy").parse(sDate);
-            } catch (ParseException e) {
-            }
+            java.sql.Date d = PL.PL_T.Utils.readDate(format);
             System.out.println("Enter shift day part - Morning/Evening");
             String sDayPart = reader.next();
             Shift.ShiftDayPart shiftDayPart = Shift.getDayPartByName(sDayPart);
@@ -47,7 +43,7 @@ public class ScheduleWorker implements Command {
                 return;
             }
             Place place = PlaceFunctions.retrievePlace(placeId);
-            Shift newShift = ShiftLogic.getShift(new java.sql.Date(d.getTime()), shiftDayPart, place);
+            Shift newShift = ShiftLogic.getShift(d, shiftDayPart, place);
             if (newShift == null) {
                 System.out.println("Shift does not exist, Please insert the shift before scheduling workers\n");
                 return;

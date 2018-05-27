@@ -6,6 +6,7 @@ import BL.BL_W.ShiftLogic;
 import BL.BL_W.WorkerLogic;
 import BL.BL_W.Entities_W.Shift;
 import BL.BL_W.Entities_W.Worker;
+import PL.PL_T.Utils;
 import PL.PL_W.Command;
 
 import java.sql.SQLException;
@@ -17,6 +18,7 @@ import java.util.Scanner;
 public class InsertWorkersAvailableShifts implements Command {
 
     static Scanner reader = new Scanner(System.in);
+    private static SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
 
     @Override
     public void execute() {
@@ -27,12 +29,7 @@ public class InsertWorkersAvailableShifts implements Command {
             System.out.println("Worker with ID " + id + "Does not Exist in the system\n");
         } else {
             System.out.println("Enter a Date: ");
-            String date = reader.next();
-            Date d = new Date();
-            try {
-                d = new SimpleDateFormat("dd/MM/yyyy").parse(date);
-            } catch (ParseException e) {
-            }
+            java.sql.Date d = Utils.readDate(format);
             System.out.println("Enter a shift Morning/Evening");
             String shiftDayPart = reader.next();
             Shift.ShiftDayPart enumShiftDayPart;
@@ -54,7 +51,7 @@ public class InsertWorkersAvailableShifts implements Command {
                 e.printStackTrace();
             }
             Place place = PlaceFunctions.retrievePlace(placeId);
-            Shift shift = ShiftLogic.getShift(new java.sql.Date(d.getTime()), temp, place);
+            Shift shift = ShiftLogic.getShift(d, temp, place);
             if (shift == null) {
                 System.out.println("Shift doesn't exist , Please Create it before inserting workers\n");
                 return;
@@ -65,7 +62,7 @@ public class InsertWorkersAvailableShifts implements Command {
             }
 
             if (ShiftLogic.insertWorkerToAvailableShift(worker, shift))
-                System.out.println("Worker " + id + " is now available for the " + enumShiftDayPart.name() + " shift at " + date + "\n");
+                System.out.println("Worker " + id + " is now available for the " + enumShiftDayPart.name() + " shift at " + d + "\n");
         }
     }
 }

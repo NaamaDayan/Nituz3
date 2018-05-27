@@ -3,6 +3,7 @@ import BL.BL_T.Entities.Place;
 import BL.BL_T.EntitiyFunctions.PlaceFunctions;
 import BL.BL_W.ShiftLogic;
 import BL.BL_W.Entities_W.Shift;
+import PL.PL_T.Utils;
 
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -14,17 +15,14 @@ public class RemoveShift {
 
     static Scanner reader = new Scanner(System.in);
     protected Shift shiftToRemove;
+    private static SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
+
 
     public void getShift() {
-            System.out.println("Enter date available");
-            String dateAvailable = reader.next();
+            System.out.println("Enter available date");
+            java.sql.Date d = Utils.readDate(format);
             System.out.println("Enter day part: Morning/Evening");
             String dayPartStr = reader.next();
-            Date d = new Date();
-            try {
-                d = new SimpleDateFormat("dd/MM/yyyy").parse(dateAvailable);
-            } catch (ParseException e) {
-            }
             Shift.ShiftDayPart dayPart = Shift.getDayPartByName(dayPartStr);
             System.out.println("enter place id");
             String placeId = reader.next();
@@ -37,7 +35,7 @@ public class RemoveShift {
             e.printStackTrace();
         }
         Place place = PlaceFunctions.retrievePlace(placeId);
-            Shift temp = ShiftLogic.getShift(new java.sql.Date(d.getTime()), dayPart, place);
+            Shift temp = ShiftLogic.getShift(d, dayPart, place);
             if(temp != null)
                 shiftToRemove = temp;
             else

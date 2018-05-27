@@ -4,6 +4,7 @@ import BL.BL_T.Entities.Place;
 import BL.BL_T.EntitiyFunctions.PlaceFunctions;
 import BL.BL_W.Entities_W.Shift;
 import BL.BL_W.ShiftLogic;
+import PL.PL_T.Utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -13,15 +14,11 @@ import java.util.Scanner;
 public class SelectShift {
     private static Scanner reader = new Scanner(System.in);
     protected Shift desiredShift;
+    private static SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
 
     public void getInformation(){
         System.out.println("Enter a Date: ");
-        String date = reader.next();
-        Date d = new Date();
-        try {
-            d = new SimpleDateFormat("dd/MM/yyyy").parse(date);
-        } catch (ParseException e) {
-        }
+        java.sql.Date d = Utils.readDate(format);
         System.out.println("Enter a shift - Morning/Evening");
         String shiftDayPart = reader.next();
         Shift.ShiftDayPart dayPart = Shift.getDayPartByName(shiftDayPart);
@@ -40,7 +37,7 @@ public class SelectShift {
             e.printStackTrace();
         }
         Place place = PlaceFunctions.retrievePlace(placeId);
-        desiredShift = ShiftLogic.getShift(new java.sql.Date(d.getTime()), dayPart, place);
+        desiredShift = ShiftLogic.getShift(d, dayPart, place);
     }
 
 

@@ -11,13 +11,10 @@ public class Shift {
     private List<Worker> workers;
     private Place place;
     private Date date;
+    private Worker manager;
 
-    private Worker shiftManager;
-
-    private String placeId;
-
-    public String getPlaceId() {
-        return placeId;
+    public Worker getManager() {
+        return manager;
     }
 
     public enum ShiftDayPart {
@@ -37,10 +34,11 @@ public class Shift {
     ShiftDayPart shiftDayPart;
 
 
-    public Shift(Date date, ShiftDayPart shiftDayPart , Place place) {
+    public Shift(Date date, ShiftDayPart shiftDayPart , Place place, Worker manager) {
         this.place = place;
         this.date = date;
         this.shiftDayPart = shiftDayPart;
+        this.manager = manager;
         workers = new LinkedList<>();
     }
 
@@ -49,7 +47,7 @@ public class Shift {
         this.date = date;
         this.shiftDayPart = shiftDayPart;
         this.workers = workers;
-        this.shiftManager = shiftManager;
+        this.manager = shiftManager;
     }
 
     public static ShiftDayPart getDayPartByName(String shiftDayPartName){

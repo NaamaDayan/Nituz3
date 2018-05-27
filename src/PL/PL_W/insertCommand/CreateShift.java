@@ -1,4 +1,5 @@
 package PL.PL_W.insertCommand;
+
 import BL.BL_W.Entities_W.Worker;
 import BL.BL_T.Entities.Place;
 import BL.BL_T.EntitiyFunctions.PlaceFunctions;
@@ -17,17 +18,13 @@ import java.util.Scanner;
 
 public class CreateShift implements Command {
     static Scanner reader = new Scanner(System.in);
+    private static SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
 
     @Override
     public void execute() {
         try {
             System.out.println("Enter new shift date");
-            String sDate = reader.next();
-            Date d = new Date();
-            try {
-                d = new SimpleDateFormat("dd/MM/yyyy").parse(sDate);
-            } catch (ParseException e) {
-            }
+            java.sql.Date d = PL.PL_T.Utils.readDate(format);
             System.out.println("Enter shift day part - Morning/Evening");
             String sDayPart = reader.next();
             Shift.ShiftDayPart shiftDayPart = Shift.getDayPartByName(sDayPart);
@@ -36,33 +33,34 @@ public class CreateShift implements Command {
             else {
                 System.out.println("enter place id");
                 String placeId = reader.next();
-                if (!PlaceFunctions.isExist(placeId)){
+                if (!PlaceFunctions.isExist(placeId)) {
                     System.out.println("place does not exist");
                     return;
                 }
                 Place place = PlaceFunctions.retrievePlace(placeId);
-                Shift newShift = ShiftLogic.getShift(new java.sql.Date(d.getTime()), shiftDayPart, place);
+                Shift newShift = ShiftLogic.getShift(d, shiftDayPart, place);
                 if (newShift != null)
                     System.out.println("Specific shift already exists\n");
                 else {
                     System.out.println("Enter shift manager");
-                    System.out.println(Utils.projectShiftManagers(WorkerLogic.getShiftManagers())+"\n");
+                    System.out.println(Utils.projectShiftManagers(WorkerLogic.getShiftManagers()) + "\n");
                     String shiftManagerId = reader.next();
                     Worker shiftManager = WorkerLogic.getWorker(shiftManagerId);
-                    if(shiftManager == null) {
+                    if (shiftManager == null) {
                         System.out.println("worker doesn't exist in the system");
                         return;
                     }
-                    if(!WorkerLogic.isShiftManager(shiftManager)) {
+                    if (!WorkerLogic.isShiftManager(shiftManager)) {
                         System.out.println("worker " + shiftManagerId + " is not a shift manager");
                         return;
                     }
 
-                    newShift = new Shift(new java.sql.Date(d.getTime()), shiftDayPart,new ArrayList<>(), place,shiftManager);
-                    if(ShiftLogic.insertShift(newShift))
+                    newShift = new Shift(d, shiftDayPart, new ArrayList<>(), place, shiftManager);
+                    if (ShiftLogic.insertShift(newShift))
                         System.out.println("new shift added Successfully\n");
                 }
             }
+
         } catch (SQLException e) {
             System.out.println("Error while inserting new shift\n");
         } catch (Exception e) {

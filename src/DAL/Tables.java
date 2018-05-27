@@ -38,7 +38,7 @@ public class Tables {
             createAvailableShifts(connection);
             createWorkersShifts(connection);
         } catch (SQLException e) {
-            e.getMessage();
+            e.printStackTrace();
         }
     }
 
@@ -88,7 +88,7 @@ public class Tables {
             String sql = "CREATE TABLE Licenses " +
                     "(ID VARCHAR (9) NOT NULL," +
                     " TRUCK_MODEL  VARCHAR (9), " +
-                    "PRIMARY KEY (ID)" +
+                    "PRIMARY KEY (ID)," +
                     "FOREIGN KEY (TRUCK_MODEL) REFERENCES Models(ID) ON DELETE CASCADE)";
             stmt.executeUpdate(sql);
         } catch (SQLException e) {
@@ -239,12 +239,13 @@ public class Tables {
                     "DateAvailable    DATE   NOT NULL, " +
                     "DayPart   Text    NOT NULL, " +
                     "PlaceId   TEXT    NOT NULL, " + // TODO: 23/05/2018 add place id as foreign key(N)
-                    "FOREIGN KEY (PlaceId) REFERENCES Places(ID))"+
+                    "FOREIGN KEY (PlaceId) REFERENCES Places(ID),"+
                     "PRIMARY KEY (WorkerID , DateAvailable , DayPart, PlaceId)," +
                     "FOREIGN KEY (WorkerID) REFERENCES Workers(ID) ON DELETE CASCADE," +
-                    "FOREIGN KEY (DateAvailable,DayPart) REFERENCES Shifts(ShiftDate,ShiftDayPart) ON DELETE CASCADE ); ";
+                    "FOREIGN KEY (DateAvailable,DayPart, PlaceId) REFERENCES Shifts(ShiftDate,ShiftDayPart,PlaceId ) ON DELETE CASCADE ); ";
             statement.executeUpdate(sql);
         } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
@@ -257,11 +258,12 @@ public class Tables {
                     "PlaceId   TEXT    NOT NULL, " + // TODO: 23/05/2018 add place id as foreign key(N)
                     "Role   INTEGER  NOT NULL," +
                     "PRIMARY KEY (WorkerID , ShiftDate , ShiftDayPart, PlaceId)," +
-                    "FOREIGN KEY (PlaceId) REFERENCES Places(ID))"+
+                    "FOREIGN KEY (PlaceId) REFERENCES Places(ID), "+
                     "FOREIGN KEY (Role) REFERENCES Roles(RoleID) ON DELETE CASCADE, " +
-                    "FOREIGN KEY (WorkerID , ShiftDate , ShiftDayPart) REFERENCES WorkersAvailableShifts(WorkerID , DateAvailable, DayPart) ON DELETE CASCADE );";
+                    "FOREIGN KEY (WorkerID , ShiftDate , ShiftDayPart, PlaceId) REFERENCES WorkersAvailableShifts(WorkerID , DateAvailable, DayPart, PlaceId) ON DELETE CASCADE );";
             statement.executeUpdate(sql);
         } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }

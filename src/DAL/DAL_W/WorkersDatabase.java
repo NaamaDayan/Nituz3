@@ -126,6 +126,7 @@ public class WorkersDatabase {
             pstmt.execute();
             return true;
         } catch (SQLException e) {
+            e.printStackTrace();
             return false;
         }
     }
@@ -229,7 +230,7 @@ public class WorkersDatabase {
     }
 
     public static Map<Worker, Role> selectAssignedWorkers(Shift shift) {
-        String sql = "SELECT W.ID, W.FName, W.LName, W.PhoneNumber ,R.RoleName R.RoleDescription FROM Workers AS W " +
+        String sql = "SELECT W.ID, W.FName, W.LName, W.PhoneNumber ,R.RoleName, R.RoleDescription FROM Workers AS W " +
                 "INNER JOIN WorkersShifts AS WS INNER JOIN WorkersRoles as WR INNER JOIN Roles AS R " +
                 " WHERE W.ID = WS.WorkerID AND WS.WorkerID=WR.WorkerID AND WS.Role=WR.Role AND WR.Role=R.RoleID" +
                 " AND ShiftDate=? AND ShiftDayPart=? AND PlaceId=?";
@@ -241,6 +242,7 @@ public class WorkersDatabase {
             ResultSet rs = pstmt.executeQuery();
             return mappingRSForShifts(rs);
         } catch (SQLException e) {
+            e.printStackTrace();
             return null;
         }
     }
@@ -300,12 +302,13 @@ public class WorkersDatabase {
 
 
     public static boolean insertShift(Shift s) {
-        String sql = "INSERT INTO Shifts (ShiftDate, ShiftDayPart , PlaceId) Values (? , ? , ?)";
+        String sql = "INSERT INTO Shifts (ShiftDate, ShiftDayPart , PlaceId , ManagerId) Values (? , ? , ?,?)";
         try (Connection connection = openConnection();
              PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setDate(1, s.getDate());
             pstmt.setString(2, s.getShiftDayPart().toString());
             pstmt.setString(3, s.getPlace().getId());
+            pstmt.setString(4, s.getManager().getId());
             pstmt.executeUpdate();
             return true;
         } catch (SQLException e) {
@@ -420,7 +423,7 @@ public class WorkersDatabase {
             Shift.ShiftDayPart dayPart = Shift.getDayPartByName(rs.getString("ShiftDayPart"));
             Place place = PlaceFunctions.retrievePlace(rs.getString("PlaceId"));
             Worker shiftManager = getWorker(rs.getString("ManagerId"));
-            List<Worker> workers = mapToListWorkers(selectAssignedWorkers(new Shift(shiftDate, dayPart, place)));
+            List<Worker> workers = mapToListWorkers(selectAssignedWorkers(new Shift(shiftDate, dayPart, place, shiftManager)));
             return new Shift(shiftDate, dayPart, workers, place, shiftManager);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -452,6 +455,7 @@ public class WorkersDatabase {
             pstmt.execute();
             return true;
         } catch (SQLException e) {
+            e.printStackTrace();
             return false;
         }
     }
@@ -540,7 +544,7 @@ public class WorkersDatabase {
              PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setDate(1, newShift.getDate());
             pstmt.setString(2, newShift.getShiftDayPart().toString());
-            pstmt.setString(3, newShift.getPlaceId());
+            pstmt.setString(3, newShift.getPlace().getId());
             return getWorker(pstmt.executeQuery().getString("ManagerId"));
         } catch (SQLException e) {
             e.printStackTrace();
