@@ -1,6 +1,6 @@
 package BL.BL_W.Entities_W;
 
-import com.sun.corba.se.impl.orbutil.threadpool.WorkQueueImpl;
+import BL.BL_T.Entities.Place;
 
 import java.sql.Date;
 import java.util.LinkedList;
@@ -9,7 +9,7 @@ import java.util.List;
 public class Shift {
 
     private List<Worker> workers;
-
+    private Place place;
     private Date date;
 
     private Worker shiftManager;
@@ -36,6 +36,7 @@ public class Shift {
 
     ShiftDayPart shiftDayPart;
 
+
     public Shift(Date date, ShiftDayPart shiftDayPart, Worker shiftManager){
         this.date = date;
         this.shiftDayPart = shiftDayPart;
@@ -43,22 +44,20 @@ public class Shift {
         this.shiftManager = shiftManager;
     }
 
-    public Shift(Date date, ShiftDayPart shiftDayPart) {
+
+    public Shift(Date date, ShiftDayPart shiftDayPart , Place place) {
+        this.place = place;
         this.date = date;
         this.shiftDayPart = shiftDayPart;
         workers = new LinkedList<>();
     }
 
-    public Shift(Date date, ShiftDayPart shiftDayPart , List<Worker> workers) {
+    public Shift(Date date, ShiftDayPart shiftDayPart , List<Worker> workers , Place place) {
+        this.place = place;
         this.date = date;
         this.shiftDayPart = shiftDayPart;
         this.workers = workers;
     }
-
-//    public Shift(Date date, String shiftDayPartName) {
-//        this.date = date;
-//        this.shiftDayPart = getDayPartByName(shiftDayPartName);// TODO: 23/04/18 need to check if it is the right syntax
-//    }
 
     public static ShiftDayPart getDayPartByName(String shiftDayPartName){
         for (ShiftDayPart shift: ShiftDayPart.values()) {
@@ -83,6 +82,14 @@ public class Shift {
         Shift other = (Shift)obj;
         return (this.date.toString().equals(other.date.toString()) && this.workers.equals(other.workers)
                 && this.shiftDayPart.name.equals(other.shiftDayPart.name));
+    }
+
+    public Place getPlace() {
+        return place;
+    }
+
+    public void setPlace(Place place) {
+        this.place = place;
     }
 
     @Override

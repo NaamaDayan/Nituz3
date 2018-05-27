@@ -5,7 +5,6 @@ import BL.BL_W.Entities_W.Shift;
 import DAL.DAL_T.ErrorsHandler;
 import DAL.DAL_T.Places;
 import DAL.DAL_W.WorkersDatabase;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.sql.SQLException;
 
@@ -35,8 +34,8 @@ public class PlaceFunctions {
         return ErrorsHandler.isPlaceExist(id);
     }
 
-    public static boolean isShiftExistInPlace(Place place, Shift shift) throws Exception {
-        return Places.isShiftExistInPlace(shift, place);
+    public static boolean isPlaceHasShiftInSpecifiedTime(Place place, Shift.ShiftDayPart dp, java.sql.Date date) throws Exception {
+        return Places.isPlaceHasShiftInSpecifiedTime(place, dp, date);
     }
 
 }

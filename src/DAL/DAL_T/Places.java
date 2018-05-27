@@ -6,7 +6,6 @@ import BL.BL_W.Entities_W.Shift;
 import BL.BL_W.Entities_W.Worker;
 import BL.BL_W.WorkerLogic;
 import DAL.Tables;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.sql.*;
 
@@ -77,7 +76,7 @@ public class Places {
         return new Place(id, address, phoneNumber, contact);
     }
 
-    public static boolean isShiftExistInPlace(Shift shift, Place place) {
-        throw new NotImplementedException();
+    public static boolean isPlaceHasShiftInSpecifiedTime(Place place, Shift.ShiftDayPart dp, java.sql.Date date) {
+        throw new UnsupportedOperationException();
     }
 }

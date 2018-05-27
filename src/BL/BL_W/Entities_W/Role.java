@@ -3,6 +3,7 @@ package BL.BL_W.Entities_W;
 public class Role {
 
     private String role;
+
     private String roleDesc;
 
 
@@ -23,8 +24,10 @@ public class Role {
      * of role description
       * @param role
      */
+
     public Role(String role){
         this.role = role;
+        this.roleDesc = "";
     }
 
     public String getRole() {
@@ -38,5 +41,9 @@ public class Role {
         Role other = (Role) obj;
         return this.role.toLowerCase().equals(other.role.toLowerCase()) &&
                 this.roleDesc.toLowerCase().equals(other.roleDesc.toLowerCase());
+    }
+
+    public String getRoleDesc() {
+        return roleDesc;
     }
 }
