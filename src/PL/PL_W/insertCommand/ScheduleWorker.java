@@ -40,7 +40,7 @@ public class ScheduleWorker implements Command {
                 System.out.println(sDayPart + "is not a valid day part\n");
                 return;
             }
-            System.out.println("enter source id");
+            System.out.println("enter place id");
             String placeId = reader.next();
             if (!PlaceFunctions.isExist(placeId)){
                 System.out.println("place does not exist");
