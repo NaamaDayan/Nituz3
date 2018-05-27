@@ -67,7 +67,7 @@ public class InsertDelivery extends Functor {
             }
             Place place = PlaceFunctions.retrievePlace(placeId);
             Shift shift = ShiftLogic.getShift(leavingDate, enumShiftDayPart, place);
-        if (!PlaceFunctions.isPlaceHasShiftInSpecifiedTime(place, enumShiftDayPart, leavingDate)) {
+        if (shift == null) {
             System.out.println("there is no such shift in the specified place");
             return;
         }
@@ -117,7 +117,8 @@ public class InsertDelivery extends Functor {
                     return;
                 }
                 Place destPlace = PlaceFunctions.retrievePlace(firstDest);
-                if (!PlaceFunctions.isPlaceHasShiftInSpecifiedTime(destPlace, enumShiftDayPart, leavingDate)) {
+                shift = ShiftLogic.getShift(leavingDate, enumShiftDayPart, destPlace);
+                if (shift == null) {
                     System.out.println("there is no such shift in the specified place");
                     DeliveryFunctions.removeDelivery(deliveryId);
                     return;
@@ -134,7 +135,8 @@ public class InsertDelivery extends Functor {
                         return;
                     }
                     destPlace = PlaceFunctions.retrievePlace(dest);
-                    if (!PlaceFunctions.isPlaceHasShiftInSpecifiedTime(destPlace, enumShiftDayPart, leavingDate)) {
+                    shift = ShiftLogic.getShift(leavingDate, enumShiftDayPart, destPlace);
+                    if (shift == null) {
                         System.out.println("there is no such shift in the specified place");
                         DeliveryFunctions.removeDelivery(deliveryId);
                         return;
