@@ -37,14 +37,6 @@ public class Shift {
     ShiftDayPart shiftDayPart;
 
 
-    public Shift(Date date, ShiftDayPart shiftDayPart, Worker shiftManager){
-        this.date = date;
-        this.shiftDayPart = shiftDayPart;
-        workers = new LinkedList<>();
-        this.shiftManager = shiftManager;
-    }
-
-
     public Shift(Date date, ShiftDayPart shiftDayPart , Place place) {
         this.place = place;
         this.date = date;

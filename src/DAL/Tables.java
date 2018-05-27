@@ -181,16 +181,17 @@ public class Tables {
 
     public static void createShifts(Connection connection) {
         try (Statement statement = connection.createStatement()) {
-            String sql = "CREATE TABLE Shifts" +
+            String sql = "CREATE TABLE Shifts " +
                     "(ShiftDate     DATE    NOT NULL, " +
                     "ShiftDayPart   TEXT    NOT NULL, " +
                     "PlaceId   TEXT    NOT NULL, " + // TODO: 23/05/2018 add place id as foreign key(N)
-                    "ManagerId  TEXT NOT NULL "+
-                    "FOREIGN KEY (PlaceId) REFERENCES Places(ID) ON DELETE CASCADE )"+
-                    "FOREIGN KEY (ManagerId) REFERENCES Workers(ID) ON DELETE CASCADE )"+// TODO: 26/05/18 need to check
+                    "ManagerId  TEXT NOT NULL, "+
+                    "FOREIGN KEY (PlaceId) REFERENCES Places(ID) ON DELETE CASCADE, "+
+                    "FOREIGN KEY (ManagerId) REFERENCES Workers(ID) ON DELETE CASCADE, "+// TODO: 26/05/18 need to check
                     "PRIMARY KEY (ShiftDate , ShiftDayPart, PlaceId));";
             statement.executeUpdate(sql);
         } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 

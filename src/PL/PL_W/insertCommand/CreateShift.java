@@ -11,6 +11,7 @@ import PL.PL_W.Utils;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -57,7 +58,7 @@ public class CreateShift implements Command {
                         return;
                     }
 
-                    newShift = new Shift(new java.sql.Date(d.getTime()), shiftDayPart, shiftManager);
+                    newShift = new Shift(new java.sql.Date(d.getTime()), shiftDayPart,new ArrayList<>(), place,shiftManager);
                     if(ShiftLogic.insertShift(newShift))
                         System.out.println("new shift added Successfully\n");
                 }

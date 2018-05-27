@@ -414,6 +414,8 @@ public class WorkersDatabase {
 
     private static Shift parseRSToShift(ResultSet rs) {
         try {
+            if (!rs.isBeforeFirst())
+                return  null;
             Date shiftDate = rs.getDate("ShiftDate");
             Shift.ShiftDayPart dayPart = Shift.getDayPartByName(rs.getString("ShiftDayPart"));
             Place place = PlaceFunctions.retrievePlace(rs.getString("PlaceId"));
@@ -489,8 +491,8 @@ public class WorkersDatabase {
 //    }
 
     public static List<Worker> getShiftManagers() {
-        String sql = "SELECT ID, FName, LName, PhoneNumber FROM Workers, WorkerRoles, Roles WHERE " +
-                "Workers.ID=WorkerRoles.WorkerID AND WorkerRoles.Role = Roles.RoleID AND Roles.RoleName =?";
+        String sql = "SELECT ID, FName, LName, PhoneNumber FROM Workers, WorkersRoles, Roles WHERE " +
+                "Workers.ID=WorkersRoles.WorkerID AND WorkersRoles.Role = Roles.RoleID AND Roles.RoleName =?";
         try (Connection connection = openConnection();
              PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setString(1, "Shift Manager");
@@ -518,8 +520,8 @@ public class WorkersDatabase {
     }
 
     public static boolean isShiftManager(Worker shiftManager) {
-        String sql = "SELECT * FROM Workers, WorkerRoles, Roles WHERE " +
-                "Workers.ID=WorkerRoles.WorkerID AND WorkerRoles.Role = Roles.RoleID AND Workers.ID = ?";
+        String sql = "SELECT * FROM Workers, WorkersRoles, Roles WHERE " +
+                "Workers.ID=WorkersRoles.WorkerID AND WorkersRoles.Role = Roles.RoleID AND Workers.ID = ?";
         try (Connection connection = openConnection();
              PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setString(1, shiftManager.getId());
