@@ -103,10 +103,6 @@ public class InsertDelivery extends Functor {
                     System.out.println("driver is not register to a shift in the given date");
                     return;
                 }
-                if (!WorkerLogic.isWorkerAvailableForShift(driver, shift)) {
-                    System.out.println("the driver is not available for the shift");
-                    return;
-                }
                 //insert the delivery
                 Delivery delivery = new Delivery(deliveryId, leavingDate, leavingHour, truck, driver, place, new LinkedList<>());
                 DeliveryFunctions.insertDelivery(delivery);
@@ -117,6 +113,7 @@ public class InsertDelivery extends Functor {
                     return;
                 }
                 Place destPlace = PlaceFunctions.retrievePlace(firstDest);
+                // TODO: 27/05/18 instead of this use getShift(Dan wrote) (S)
                 if (!PlaceFunctions.isPlaceHasShiftInSpecifiedTime(destPlace, enumShiftDayPart, leavingDate)) {
                     System.out.println("there is no such shift in the specified place");
                     DeliveryFunctions.removeDelivery(deliveryId);
@@ -134,6 +131,7 @@ public class InsertDelivery extends Functor {
                         return;
                     }
                     destPlace = PlaceFunctions.retrievePlace(dest);
+                    // TODO: 27/05/18 instead of this use getShift(Dan wrote) (S)
                     if (!PlaceFunctions.isPlaceHasShiftInSpecifiedTime(destPlace, enumShiftDayPart, leavingDate)) {
                         System.out.println("there is no such shift in the specified place");
                         DeliveryFunctions.removeDelivery(deliveryId);

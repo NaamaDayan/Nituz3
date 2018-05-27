@@ -76,6 +76,7 @@ public class Places {
         return new Place(id, address, phoneNumber, contact);
     }
 
+    // TODO: 27/05/18 instead of this use getShift(Dan wrote) (S)     
     public static boolean isPlaceHasShiftInSpecifiedTime(Place place, Shift.ShiftDayPart dp, java.sql.Date date) {
         throw new UnsupportedOperationException();
     }
