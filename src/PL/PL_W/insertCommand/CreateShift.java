@@ -45,7 +45,7 @@ public class CreateShift implements Command {
                     System.out.println("Specific shift already exists\n");
                 else {
                     System.out.println("Enter shift manager");
-                    System.out.println(Utils.projectShiftManagers(WorkerLogic.getShiftManagers()));
+                    System.out.println(Utils.projectShiftManagers(WorkerLogic.getShiftManagers())+"\n");
                     String shiftManagerId = reader.next();
                     Worker shiftManager = WorkerLogic.getWorker(shiftManagerId);
                     if(shiftManager == null) {

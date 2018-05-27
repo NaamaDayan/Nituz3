@@ -252,12 +252,9 @@ public class WorkersDatabase {
             if (!rs.isBeforeFirst()) return data;
             while (rs.next()) {
                 String ID = rs.getString("ID");
-                String fName = rs.getString("FName");
-                String lName = rs.getString("LName");
                 String role = rs.getString("RoleName");
                 String roleDesc = rs.getString("RoleDescription");
-                String phoneNumber = rs.getString("PhoneNumber");
-                data.put(new Worker(ID, fName, lName, phoneNumber , null), new Role(role , roleDesc));
+                data.put(getWorker(ID), new Role(role , roleDesc));
             }
 
         } catch (SQLException e) {
@@ -292,12 +289,7 @@ public class WorkersDatabase {
             if (!resultSet.isBeforeFirst()) return workers;
             while (resultSet.next()) {
                 String ID = resultSet.getString("ID");
-                String fName = resultSet.getString("FName");
-                String lName = resultSet.getString("LName");
-                String phoneNumber = resultSet.getString("PhoneNumber");
-                Worker toAdd = new Worker(ID, fName, lName, phoneNumber ,null);
-                toAdd.setRoles(WorkersDatabase.getRoles(ID));
-                workers.add(toAdd);
+                workers.add(getWorker(ID));
             }
             return workers;
         } catch (SQLException e) {
@@ -460,11 +452,7 @@ public class WorkersDatabase {
             if (!rs.isBeforeFirst()) return parsed;
             while (rs.next()) {
                 String ID = rs.getString("ID");
-                String fName = rs.getString("FName");
-                String lName = rs.getString("LName");
-                String phoneNum = rs.getString("PhoneNumber");
-                Worker toAdd = new Worker(ID, fName, lName, phoneNum, null);
-                parsed.add(toAdd);
+                parsed.add(getWorker(ID));
             }
             return parsed;
         } catch (SQLException e) {
