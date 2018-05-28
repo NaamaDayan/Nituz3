@@ -15,9 +15,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.SQLException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Scanner;
 
 public class ScheduleWorker implements Command {
@@ -61,7 +59,7 @@ public class ScheduleWorker implements Command {
             if(ShiftLogic.getShiftManager(newShift).equals(worker))
                 System.out.println("this worker is already assigned as the manager of the shift");
 
-            if (WorkerLogic.isWorkerAvailableForShift(worker, newShift)) {
+            if (WorkerLogic.isWorkerNotAvailableForShift(worker, newShift)) {
                 System.out.println("Worker is not available for the specific shift\n");
                 return;
             }

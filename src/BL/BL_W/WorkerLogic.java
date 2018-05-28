@@ -15,8 +15,8 @@ public class WorkerLogic {
     public static boolean updateWorker(Worker worker){
         return WorkersDatabase.updateWorker(worker);
     }
-    public static boolean isWorkerAvailableForShift(Worker worker, Shift shift) {
-        return WorkersDatabase.isWorkerAvailableForShift(worker, shift);
+    public static boolean isWorkerNotAvailableForShift(Worker worker, Shift shift) {
+        return WorkersDatabase.isWorkerNotAvailableForShift(worker, shift);
     }
     public static List<Worker> getShiftManagers(){
         return WorkersDatabase.getShiftManagers();

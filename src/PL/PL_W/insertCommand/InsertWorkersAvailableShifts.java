@@ -9,10 +9,7 @@ import BL.BL_W.Entities_W.Worker;
 import PL.PL_T.Utils;
 import PL.PL_W.Command;
 
-import java.sql.SQLException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Scanner;
 
 public class InsertWorkersAvailableShifts implements Command {
@@ -56,8 +53,8 @@ public class InsertWorkersAvailableShifts implements Command {
                 System.out.println("Shift doesn't exist , Please Create it before inserting workers\n");
                 return;
             }
-            if (!WorkerLogic.isWorkerAvailableForShift(worker, shift)) {
-                System.out.println("Worker " + id + " is not available for this shift");
+            if (!WorkerLogic.isWorkerNotAvailableForShift(worker, shift)) {
+                System.out.println("Worker " + id + " is already available for this shift");
                 return;
             }
 

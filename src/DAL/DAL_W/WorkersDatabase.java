@@ -460,7 +460,7 @@ public class WorkersDatabase {
         }
     }
 
-    public static boolean isWorkerAvailableForShift(Worker worker, Shift shift) {
+    public static boolean isWorkerNotAvailableForShift(Worker worker, Shift shift) {
         String sql = "SELECT * FROM WorkersAvailableShifts WHERE WorkerID=? AND DateAvailable=? AND DayPart=? AND PlaceId = ?";
         try (Connection connection = openConnection();
              PreparedStatement pstmt = connection.prepareStatement(sql)) {
