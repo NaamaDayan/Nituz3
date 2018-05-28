@@ -1,6 +1,7 @@
 package PL.PL_T.updateHandlers;
 
 import BL.BL_T.Entities.Delivery;
+import BL.BL_T.Entities.Driver;
 import BL.BL_T.Entities.Place;
 import BL.BL_T.Entities.Truck;
 import BL.BL_T.EntitiyFunctions.*;
@@ -76,7 +77,7 @@ public class UpdateDelivery extends Functor {
         if (Utils.boolQuery("update driver? y/n")) {
             System.out.println("enter driver id");
             String driverId = reader.next();
-            Worker driver = DriverFunctions.getDriver(driverId);
+            Driver driver = DriverFunctions.getDriver(driverId);
             try {
                 if (driver == null){
                     System.out.println("driver does not exist");

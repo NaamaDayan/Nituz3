@@ -2,6 +2,8 @@ package DAL.DAL_T;
 
 
 import BL.BL_T.Entities.*;
+import BL.BL_T.Entities.Driver;
+import BL.BL_T.EntitiyFunctions.DriverFunctions;
 import BL.BL_W.Entities_W.Worker;
 import DAL.DAL_W.WorkersDatabase;
 import DAL.Tables;
@@ -62,7 +64,7 @@ public class Deliveries{
             String truckId = rs.getString("TRUCK_ID");
             Truck truck = Trucks.retrieveTruck(truckId);
             String driverId = rs.getString("DRIVER_ID");
-            Worker driver = WorkersDatabase.getWorker(driverId); // TODO: 25/05/2018 change driver to worker (N)
+            Driver driver = DriverFunctions.getDriver(driverId); // TODO: 25/05/2018 change driver to worker (N)
             String sourceId = rs.getString("SOURCE_ID");
             Place source = Places.retrievePlace(sourceId);
             List<DeliveryDestination> dests = DeliveryDestinations.retrieveDeliveryDestinations(id);

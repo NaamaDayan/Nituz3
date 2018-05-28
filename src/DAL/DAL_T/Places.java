@@ -59,7 +59,7 @@ public class Places {
         PreparedStatement stmt = conn.prepareStatement(query);
         stmt.setString(1, p.getAddress());
         stmt.setString(2, p.getPhoneNumber());
-        stmt.setString(3, p.getContactName().getId());
+        stmt.setString(3, p.getContactWorker().getId());
         stmt.setString(4, p.getId());
         stmt.executeUpdate();
         conn.close();

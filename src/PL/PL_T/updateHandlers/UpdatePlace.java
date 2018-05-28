@@ -49,7 +49,7 @@ public class UpdatePlace extends Functor {
                 System.out.println("contact worker does not exist!");
                 return;
             }
-            p.setContactName(contact);
+            p.setContactWorker(contact);
         }
         try {
             PlaceFunctions.updatePlace(p);

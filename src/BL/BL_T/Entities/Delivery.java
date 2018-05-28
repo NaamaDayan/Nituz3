@@ -11,11 +11,11 @@ public class Delivery {
     private Date leavingDate;
     private Time leavingTime;
     private Truck truck;
-    private Worker driver;
+    private Driver driver;
     private Place sourcePlace;
     private List<DeliveryDestination> destinations;
 
-    public Delivery(String id, Date date, Time hour, Truck truckId, Worker driverId, Place source, List<DeliveryDestination> destinations) {
+    public Delivery(String id, Date date, Time hour, Truck truckId, Driver driverId, Place source, List<DeliveryDestination> destinations) {
         this.id = id;
         this.leavingDate = date;
         this.leavingTime = hour;
@@ -84,7 +84,7 @@ public class Delivery {
         this.truck = truck;
     }
 
-    public void setDriver(Worker driver) {
+    public void setDriver(Driver driver) {
         this.driver = driver;
     }
 

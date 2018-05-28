@@ -3,7 +3,6 @@ package BL.BL_W.Entities_W;
 public class Role {
 
     private String role;
-
     private String roleDesc;
 
 

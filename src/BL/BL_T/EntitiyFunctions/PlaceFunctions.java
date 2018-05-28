@@ -4,7 +4,6 @@ import BL.BL_T.Entities.Place;
 import BL.BL_W.Entities_W.Shift;
 import DAL.DAL_T.ErrorsHandler;
 import DAL.DAL_T.Places;
-import DAL.DAL_W.WorkersDatabase;
 
 import java.sql.SQLException;
 
@@ -15,7 +14,7 @@ public class PlaceFunctions {
 
     public static void insertPlace(Place place){
 
-        Places.insertPlace(place.getId(), place.getAddress(), place.getPhoneNumber(), place.getContactName().getId());
+        Places.insertPlace(place.getId(), place.getAddress(), place.getPhoneNumber(), place.getContactWorker().getId());
     }
 
     public static Place retrievePlace(String id){

@@ -27,6 +27,13 @@ public class ScheduleWorker implements Command {
     @Override
     public void execute() {
         try {
+            System.out.println("enter place id");
+            String placeId = reader.next();
+            if (!PlaceFunctions.isExist(placeId)){
+                System.out.println("place does not exist");
+                return;
+            }
+            Place place = PlaceFunctions.retrievePlace(placeId);
             System.out.println("Enter shift date");
             java.sql.Date d = PL.PL_T.Utils.readDate(format);
             System.out.println("Enter shift day part - Morning/Evening");
@@ -36,13 +43,6 @@ public class ScheduleWorker implements Command {
                 System.out.println(sDayPart + "is not a valid day part\n");
                 return;
             }
-            System.out.println("enter place id");
-            String placeId = reader.next();
-            if (!PlaceFunctions.isExist(placeId)){
-                System.out.println("place does not exist");
-                return;
-            }
-            Place place = PlaceFunctions.retrievePlace(placeId);
             Shift newShift = ShiftLogic.getShift(d, shiftDayPart, place);
             if (newShift == null) {
                 System.out.println("Shift does not exist, Please insert the shift before scheduling workers\n");

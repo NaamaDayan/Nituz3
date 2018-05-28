@@ -12,6 +12,7 @@ public class Shift {
     private Place place;
     private Date date;
     private Worker manager;
+    private ShiftDayPart shiftDayPart;
 
     public Worker getManager() {
         return manager;
@@ -30,8 +31,6 @@ public class Shift {
             this.name = name;
         }
     }
-
-    ShiftDayPart shiftDayPart;
 
 
     public Shift(Date date, ShiftDayPart shiftDayPart , Place place, Worker manager) {

@@ -10,13 +10,14 @@ public class Place {
     private String id;
     private String address;
     private String phoneNumber;
-    private Worker contactName;
+    private Worker contactWorker;
+    
 
     public Place(String id, String address, String phoneNumber, Worker contactName) {
         this.id = id;
         this.address = address;
         this.phoneNumber = phoneNumber;
-        this.contactName = contactName;
+        this.contactWorker = contactName;
     }
 
     @Override
@@ -25,7 +26,7 @@ public class Place {
                 "id='" + id + '\'' +
                 ", address='" + address + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
-                ", contactName=" + contactName +
+                ", contactName=" + contactWorker +
                 '}';
     }
 
@@ -41,8 +42,8 @@ public class Place {
         return phoneNumber;
     }
 
-    public Worker getContactName() {
-        return contactName;
+    public Worker getContactWorker() {
+        return contactWorker;
     }
 
     public void setAddress(String address) {
@@ -53,7 +54,7 @@ public class Place {
         this.phoneNumber = phoneNumber;
     }
 
-    public void setContactName(Worker contactName) {
-        this.contactName = contactName;
+    public void setContactWorker(Worker contactWorker) {
+        this.contactWorker = contactWorker;
     }
 }
